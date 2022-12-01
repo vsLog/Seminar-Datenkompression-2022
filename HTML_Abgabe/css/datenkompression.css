@@ -1,0 +1,65 @@
+/* Body */
+body{
+    margin: 0px;
+}
+
+.standardContainer {
+    
+}
+
+/* Navigation Bar */
+.navigation {
+    width: 100%;
+    background-color: rgb(16, 5, 179);
+    overflow: auto;
+}
+
+  
+/* Navigation Bar Link */
+.navigation a {
+    width: 30%;
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+/* Current Link */
+.navigation a.active {
+    background-color: #0a8629;
+}
+
+/* Hover Link */
+.navigation a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Calculations*/
+.calculationContainer {
+    margin:5px 0;
+    padding:3px;
+}
+
+
+.subCalculationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.inputTextArea{
+    width: 70% !important;
+}
+
+.outputTextArea{
+    width: 70% !important;
+}
+
+.progress{
+    width: 70%;
+    margin-top: 15px;
+}
