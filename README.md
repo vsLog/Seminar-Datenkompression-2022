@@ -1,0 +1,1 @@
+# Seminar-Datenkompression-2022
