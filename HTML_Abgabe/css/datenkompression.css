@@ -3,8 +3,12 @@ body{
     margin: 0px;
 }
 
-.standardContainer {
+.standardContainer{
     
+}
+
+.textBlock{
+    margin-left: 5%;
 }
 
 /* Navigation Bar */
@@ -17,7 +21,7 @@ body{
   
 /* Navigation Bar Link */
 .navigation a {
-    width: 30%;
+    width: 33.33%;
     float: left;
     color: white;
     text-align: center;
@@ -62,4 +66,9 @@ body{
 .progress{
     width: 70%;
     margin-top: 15px;
+}
+
+.aktionButton{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
