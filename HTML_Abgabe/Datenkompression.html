@@ -28,9 +28,9 @@
 
     
 	<div class="mainContainer">  
-            <div class="textBlock">
-                <h3 class="subtitle">Einleitung</h3>
-                TODO Erklärung</div>   
+            <p>
+                TODO Erklärung
+            </p>
             <div class="calculationContainer"> 
                 <div class="subCalculationContainer"> 
                     <textarea class="inputTextArea" id="input_area" style="width:300px; height:150px;">Eingabefeld</textarea>
@@ -41,7 +41,7 @@
                     </div> 
                 </div>
                 <div class="subCalculationContainer">
-                    <div class="progress">
+                    <div class="progress" id="progressParent">
                         <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: green" data-toggle="tooltip" data-container="body" title="p(E)=1/11">
                             E
                         </div>
@@ -73,11 +73,13 @@
                             d
                         </div>
                     </div>
+                    
+                   
                 </div>
                 
                 <div class="subCalculationContainer"> 
                     <div class="standardContainer">
-                        <button class="aktionButton" type="button">Starte Naives-Kompressionsverfahren</button>
+                        <button class="aktionButton" type="button" onclick="readInput()">Lese Zeichenverteilung aus</button>
                     </div> 
                     <div class="standardContainer">
                         <button class="aktionButton" type="button">Starte Genaues-Kompressionsverfahren</button>
@@ -94,11 +96,8 @@
                     
                 </div>
             </div>
-            <div class="textBlock">
-                <h3 class="subtitle">Statistik</h3>
+            <h3 class="subtitle">Statistik</h3>
                 TODO Statistiken des Kompressionsverfahren
-            </div>
-            
     </div>
 
 
