@@ -26,10 +26,10 @@ readInput = function() {
     var totalChars = input.length;
     var charMap = countChars(input);
     document.getElementById("output_area").value = mapToString(charMap);
-    createCharElemnt(charMap, totalChars);
+    createCharElement(charMap, totalChars);
 }
 
-createCharElemnt = function(occurenceMap, totalChars) {
+createCharElement = function(occurenceMap, totalChars) {
     var parent = document.getElementById("progressParent");
     parent.innerHTML = "";
     for (const char of occurenceMap.keys()) {
@@ -44,7 +44,7 @@ createCharElemnt = function(occurenceMap, totalChars) {
         g.innerHTML = char;
         parent.appendChild(g);
     }
-    console.log(parent);
+    // console.log(parent);
 }
 
 function getRandomColor() {

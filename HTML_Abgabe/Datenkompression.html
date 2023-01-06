@@ -9,6 +9,8 @@
 
     <link href="css/datenkompression.css" rel="stylesheet">
     <script src="scripts/webpage.js"></script>
+    <script src="scripts/encoding.js"></script>
+    <script src="scripts/decoding.js"></script>
 
     <!-- Externe Komponenten-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -82,6 +84,9 @@
                         <button class="aktionButton" type="button" onclick="readInput()">Lese Zeichenverteilung aus</button>
                     </div> 
                     <div class="standardContainer">
+                        <button class="aktionButton" onclick="encodeInput()">Starte Naives-Kompressionsverfahren</button>
+                    </div> 
+                    <div class="standardContainer">
                         <button class="aktionButton" type="button">Starte Genaues-Kompressionsverfahren</button>
                     </div> 
                 </div>
@@ -90,8 +95,8 @@
                 </div>
                 <div class="subCalculationContainer"> 
                     <div class="standardContainer">
-                        <button class="aktionButton" type="button">Nächster Schritt</button>
-                        <button class="aktionButton" type="button">Alle Schritte</button>
+                        <button class="aktionButton" type="button" onclick="decodeInput()">Starte Naives-Dekompressionsverfahren</button>
+                        <button class="aktionButton" type="button">Starte Genaues-Dekompressionsverfahren</button>
                     </div> 
                     
                 </div>
