@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.8)  8 JAN 2023 23:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.8)  8 JAN 2023 23:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -871,7 +871,7 @@ Package rerunfilecheck Info: File `Arithmetisches_Kodieren.out' has not changed
 Here is how much of TeX's memory you used:
  23479 strings out of 475380
  433041 string characters out of 2776773
- 934835 words of memory out of 3000000
+ 934836 words of memory out of 3000000
  44427 multiletter control sequences out of 15000+600000
  482215 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -891,7 +891,7 @@ cho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
 Users/vscho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.p
 fb><C:/Users/vscho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb>
-Output written on Arithmetisches_Kodieren.pdf (6 pages, 182459 bytes).
+Output written on Arithmetisches_Kodieren.pdf (6 pages, 182440 bytes).
 PDF statistics:
  504 PDF objects out of 1000 (max. 8388607)
  40 named destinations out of 1000 (max. 500000)
