@@ -1,5 +1,14 @@
 import ast
+import sys
+
 from manim import *
+
+def calc_frequenices(old_freq_dict):
+    sorted_keys = sorted(list(old_freq_dict.keys()))
+    freq_dict = dict().fromkeys(sorted_keys,0)
+    for key in sorted_keys:
+        freq_dict[key] += old_freq_dict[key]
+    return freq_dict
 
 
 class Decoding(MovingCameraScene):
@@ -7,6 +16,7 @@ class Decoding(MovingCameraScene):
     def construct(self):
         encoded = input("to decode: ")
         frequencies = ast.literal_eval(input("occurrences: "))
+        frequencies = calc_frequenices(frequencies)
         length_input = 0
         for i in frequencies:
             length_input += frequencies[i]

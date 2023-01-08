@@ -1,20 +1,20 @@
 from manim import *
-from collections import OrderedDict
-from collections import Counter
 
 
-class OrderedCounter(Counter, OrderedDict):
-    def __repr__(self):
-        return '%s(%r)' % (self.__class__.__name__, OrderedDict(self))
-    def __reduce__(self):
-        return self.__class__, (OrderedDict(self),)
+def calc_frequenices(word):
+    freq_dict = {}
+    sorted_keys= sorted(list(dict.fromkeys(word).keys()))
+    for key in sorted_keys:
+        freq_dict[key] = word.count(key)
+    return freq_dict
 
 
 class Encoding(MovingCameraScene):
 
     def construct(self):
         decoded = input("to encode: ")
-        frequencies = OrderedCounter(decoded)
+        frequencies = calc_frequenices(decoded)
+        # frequencies = OrderedCounter(decoded)
         length_input = 0
         for i in frequencies:
             length_input += frequencies[i]
