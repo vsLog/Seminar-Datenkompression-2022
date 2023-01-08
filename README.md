@@ -21,4 +21,4 @@ TODO
 6. wait until the animation is been generated
 
 #### Example
-> ![image](https://user-images.githubusercontent.com/77013139/211203490-00b9d615-d0dc-4baa-a6a9-d3c01eac55b4.png)
+> ![image](https://user-images.githubusercontent.com/77013139/211211255-7c6e6a9a-86fd-4552-8eb1-e3f8537bdcbd.png)
