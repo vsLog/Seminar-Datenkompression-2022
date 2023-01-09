@@ -1,9 +1,22 @@
 decodeInput = function() {
-    var input = Number(document.getElementById("output_area").value);
+    var input = decodeFromBinary(String(document.getElementById("output_area").value));
     totalChars = sessionStorage.getItem("totalChars");
     charMap = new Map(JSON.parse(sessionStorage.getItem("charMap")));
     decodedInput = decode(input, totalChars, generateCharIntervals(totalChars, charMap));
     document.getElementById("input_area").value = decodedInput;
+}
+
+decodeFromBinary = function(input) {
+	x = 0;
+	decoded = input.slice(2)
+	 for (var i = 1; i < decoded.length; i++) {
+		 console.log(i, decoded[i])
+		if (parseInt(decoded[i-1]) == 1) {
+			x += 2**(-i)
+		}
+		console.log(x)
+	}
+	return x
 }
 
 decode = function(input, totalChars, charIntervals) {
