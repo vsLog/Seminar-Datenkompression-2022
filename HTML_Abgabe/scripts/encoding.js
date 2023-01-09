@@ -37,10 +37,9 @@ encodeInputPrecise = function() {
     var charMap = countChars(input);
     sessionStorage.setItem("totalChars", totalChars);
     sessionStorage.setItem("charMap", JSON.stringify(Array.from(charMap.entries())));
-    document.getElementById("output_area").value = "0b";
+    document.getElementById("output_area").value = "";
     createCharElement(charMap, totalChars);
     encodePrecice(input, totalChars, charMap);
-    document.getElementById("output_area").innerHTML += "n";
 }
 
 encodePrecice = function(input, totalChars, charMap) {
@@ -67,7 +66,7 @@ encodePrecice = function(input, totalChars, charMap) {
                 uint32Bounds[1] <<= 1;
                 uint32Bounds[1] |= 1;
             } 
-            else if (uint32Bounds[0] >= (uint32IfConstans[1]) && uint32Bounds[1] < (uint32IfConstans[0])) {
+            else if (uint32Bounds[0] >= (uint32IfConstans[1]) && uint32Bounds[1] < (uint32IfConstans[2])) {
                 pending_bits++;
                 uint32Bounds[0] <<= 1;
                 uint32Bounds[0] &= 0x7FFFFFFF;
@@ -78,6 +77,13 @@ encodePrecice = function(input, totalChars, charMap) {
                 break;
             }   
         } 
+    }
+    pending_bits++;
+    if (uint32Bounds[0] < uint32IfConstans[1]) {
+        output_bit_plus_pending(0, pending_bits);
+    }
+    else {
+        output_bit_plus_pending(1, pending_bits);
     }
 }
 
