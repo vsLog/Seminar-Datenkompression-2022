@@ -9,6 +9,8 @@ encodeInput = function() {
     document.getElementById("output_area").value = encodedInput;
 }
 
+
+
 encode = function(input, totalChars, charMap) {
     var charIntervals = generateCharIntervals(totalChars, charMap);
     var upperBound = 1.0;
@@ -18,8 +20,29 @@ encode = function(input, totalChars, charMap) {
         upperBound = lowerBound + intervalSize * charIntervals.get(input[i])[1];
         lowerBound = lowerBound + intervalSize * charIntervals.get(input[i])[0]; 
     }
-    return (lowerBound + (upperBound-lowerBound)/2);
+    return encodeToBinary(lowerBound, upperBound);
 }
+
+
+encodeToBinary = function(lowerBound, upperBound) {
+	var encodedBinary = "0.";
+	var x = 0;
+	var i = 1;
+	while (true) {
+		if ((x + 2**(-i)) < upperBound) {
+			x += 2**(-i);
+			encodedBinary += "1"
+			if (x >= lowerBound) {
+				return encodedBinary
+			}
+		} 
+		else {
+			encodedBinary += "0"
+		}
+		i ++;
+	}
+}
+
 
 generateCharIntervals = function(totalChars, charMap) {
     var lowerBound = 0.0;
@@ -106,8 +129,5 @@ generateCharIntervalsPrecice = function(charMap) {
         lowerBound = upperBound;
     }
     return charMap;
-}
 
-decimalToBinary = function(decimal) {
-    return (decimal >>> 0).toString(2);
 }
