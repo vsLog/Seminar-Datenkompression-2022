@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.8)  8 JAN 2023 23:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.8)  12 JAN 2023 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -860,17 +860,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 162--165
 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [3] [4] [5] (Arithmetisches_Kodieren.aux)
-Package rerunfilecheck Info: File `Arithmetisches_Kodieren.out' has not changed
-.
-(rerunfilecheck)             Checksum: 0E78AAD3AFFB09F865E7627E5E3A10EC;2197.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `Arithmetisches_Kodieren.out' has changed.
+
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Arithmetisches_Kodieren.out':
+(rerunfilecheck)             Before: 0E78AAD3AFFB09F865E7627E5E3A10EC;2197
+(rerunfilecheck)             After:  71172DFDEA4958EE93556A0131BB9077;2300.
  ) 
 Here is how much of TeX's memory you used:
- 23479 strings out of 475380
- 433041 string characters out of 2776773
+ 23480 strings out of 475380
+ 433055 string characters out of 2776773
  934836 words of memory out of 3000000
  44427 multiletter control sequences out of 15000+600000
  482215 words of font info for 52 fonts, out of 8000000 for 9000
@@ -891,9 +897,9 @@ cho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
 Users/vscho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.p
 fb><C:/Users/vscho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb>
-Output written on Arithmetisches_Kodieren.pdf (6 pages, 182440 bytes).
+Output written on Arithmetisches_Kodieren.pdf (6 pages, 184000 bytes).
 PDF statistics:
- 504 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
+ 508 PDF objects out of 1000 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
