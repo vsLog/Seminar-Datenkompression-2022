@@ -1,16 +1,14 @@
 \contentsline {section}{\numberline {1}Thema}{2}{section.1}%
 \contentsline {section}{\numberline {2}Theoretische Grundlagen}{2}{section.2}%
-\contentsline {section}{\numberline {3}Verfahren-Beschreibung}{2}{section.3}%
-\contentsline {section}{\numberline {4}Anwendungsgebiet}{2}{section.4}%
-\contentsline {section}{\numberline {5}Qualitätsbewertung über das Verfahren}{2}{section.5}%
-\contentsline {section}{\numberline {6}Präsentation / Demonstration Kit}{2}{section.6}%
-\contentsline {subsection}{\numberline {6.1}naives Verfahren}{2}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Installation}{2}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Kodierung}{3}{subsubsection.6.1.2}%
-\contentsline {subsubsection}{\numberline {6.1.3}Dekodierung}{3}{subsubsection.6.1.3}%
-\contentsline {subsection}{\numberline {6.2}genaues Verfahren}{3}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Kodierung}{3}{subsection.6.3}%
-\contentsline {section}{\numberline {7}temp}{3}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Ein Unterabschnitt}{4}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Ein weiterer Unterabschnitt}{4}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Der nächste Abschnitt}{4}{subsection.7.3}%
+\contentsline {section}{\numberline {3}Verfahren-Beschreibung}{3}{section.3}%
+\contentsline {section}{\numberline {4}Anwendungsgebiet}{4}{section.4}%
+\contentsline {section}{\numberline {5}Qualitätsbewertung über das Verfahren}{4}{section.5}%
+\contentsline {section}{\numberline {6}Präsentation / Demonstration Kit}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}naives Verfahren}{5}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Installation}{5}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Kodierung}{5}{subsubsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.3}Dekodierung}{5}{subsubsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.2}genaues Verfahren}{6}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Kodierung}{6}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Dekodierung}{6}{subsubsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.3}naive HTML-Kodierung}{6}{subsection.6.3}%

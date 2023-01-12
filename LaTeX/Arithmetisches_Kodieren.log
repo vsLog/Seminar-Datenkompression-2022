@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.8)  12 JAN 2023 15:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.8)  12 JAN 2023 23:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -823,22 +823,47 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.87 \tableofcontents\newpage
-                              [1]
-Underfull \hbox (badness 10000) in paragraph at lines 107--117
+                              [1] [2]
+<schritt1.jpg, id=97, 684.156pt x 221.628pt>
+File: schritt1.jpg Graphic file (type jpg)
+<use schritt1.jpg>
+Package pdftex.def Info: schritt1.jpg  used on input line 100.
+(pdftex.def)             Requested size: 342.07716pt x 110.81372pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--117
+Underfull \hbox (badness 10000) in paragraph at lines 97--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--123
+Underfull \hbox (badness 10000) in paragraph at lines 97--104
 
  []
 
-[2]
+<schritt2.jpg, id=98, 560.69475pt x 196.3335pt>
+File: schritt2.jpg Graphic file (type jpg)
+<use schritt2.jpg>
+Package pdftex.def Info: schritt2.jpg  used on input line 105.
+(pdftex.def)             Requested size: 280.34668pt x 98.1665pt.
+[3 <./schritt1.jpg> <./schritt2.jpg>] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 129--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--146
+
+ []
+
 (C:\Users\vscho\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
@@ -846,42 +871,36 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-26.
+49.
 
 (C:\Users\vscho\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 162--165
-
+[5]
+Overfull \hbox (25.82713pt too wide) in paragraph at lines 189--190
+\T1/cmr/m/n/10 Hierfür bit-te die html Da-tei \T1/cmr/bx/n/10 Da-ten-kom-pres-s
+i-on.html \T1/cmr/m/n/10 un-ter \T1/cmr/m/it/10 ./Seminar-Datenkompression-2022
+/HTML
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--165
+Underfull \hbox (badness 10000) in paragraph at lines 191--196
 
  []
 
-[3] [4] [5] (Arithmetisches_Kodieren.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `Arithmetisches_Kodieren.out' has changed.
-
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Arithmetisches_Kodieren.out':
-(rerunfilecheck)             Before: 0E78AAD3AFFB09F865E7627E5E3A10EC;2197
-(rerunfilecheck)             After:  71172DFDEA4958EE93556A0131BB9077;2300.
+[6] [7] (Arithmetisches_Kodieren.aux)
+Package rerunfilecheck Info: File `Arithmetisches_Kodieren.out' has not changed
+.
+(rerunfilecheck)             Checksum: 9B379EC778FD5852FA7DCB4CC20258EF;2008.
  ) 
 Here is how much of TeX's memory you used:
- 23480 strings out of 475380
- 433055 string characters out of 2776773
- 934836 words of memory out of 3000000
- 44427 multiletter control sequences out of 15000+600000
+ 23399 strings out of 475380
+ 431484 string characters out of 2776773
+ 929112 words of memory out of 3000000
+ 44348 multiletter control sequences out of 15000+600000
  482215 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,10n,89p,628b,1209s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 84i,5n,89p,632b,1209s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti
 1000.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ectt0800.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -892,14 +911,11 @@ ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fon
 ts/pk/ljfour/jknappen/ec/dpi600\ecxc1728.pk> <C:\Users\vscho\AppData\Local\MiKT
 eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2074.pk><C:/Users/vscho/AppData/Local
 /Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/vscho/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/vs
-cho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
-Users/vscho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.p
-fb><C:/Users/vscho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb>
-Output written on Arithmetisches_Kodieren.pdf (6 pages, 184000 bytes).
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/vs
+cho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+Output written on Arithmetisches_Kodieren.pdf (8 pages, 206366 bytes).
 PDF statistics:
- 508 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 515 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
+ 135 words of extra memory for PDF output out of 10000 (max. 10000000)
 

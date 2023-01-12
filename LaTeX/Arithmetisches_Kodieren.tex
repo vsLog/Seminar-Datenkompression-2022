@@ -87,22 +87,44 @@ Goethe Universität , Frankfurt am Main
 \tableofcontents\newpage
 %\listoffigures\newpage
 	
-	\section{Thema}
-	Hier könnte ein kurzer Satz zur Einleitung stehen.
-	
+\section{Thema}
+\label{sec:Thema}
+Arithmetisches Kodieren ist eine Form der Entropiekodierung. Im Gegensatz zu anderen Entropiekodierungen wie z.B. der Huffman-Kodierung, wo ein Baum erstellt wird um anschließend für jedes Zeichen eine individuelle Kodierung zu berechnen, wird beim Arithmetischen Kodieren eine lange binäre Fließkommazahl ausgegeben, welche die komplette Eingabe kodiert. Es findet also keine Kodierung kleinerer Komponente statt, sondern es wird Zeichen für Zeichen kodiert. Hierdurch werden Kompressionsraten erreicht, welche sehr nahe am theoretischen Limit der Entropie liegen.\cite{WIKI}
 		\section{Theoretische Grundlagen}
-	Hier könnte ein kurzer Satz zur Einleitung stehen.
-	
-		\section{Verfahren-Beschreibung}
 
-	Hier könnte ein kurzer Satz zur Einleitung stehen.
-	
+	\newpage
+		\section{Verfahren-Beschreibung}
+Zunächst wird für die Eingabe die Häufigkeiten aller vorkommenden Zeichen berechnet. Anschließend wird das Interval [0,1] entsprechend dieser Häufigkeiten aufgeteilt. Dies wird gemacht, da am Ende  beim Arithmetischen Kodieren die Eingabe als eine beliebig lange Fließkommazahl kodiert wird. Legen wir nun das Intervall [0,1] fest, so wird der später kodierte String irgendwo zwischen 0 und 1 liegen.
+So könnte z.B für die Eingabe \textbf{Hello} folgende Startbedingung erstellt werden.
+\\\\
+\includegraphics[scale=0.5]{schritt1}
+\\\\
+Nun wird das erste Zeichen eingelesen. Dessen Intervall wird nun das komplette Intervall ersetzen. Die Verhältnisse der Intervalle untereinander ändert sich nicht. Es werden lediglich die Grenzen aktualisiert.
+\\
+\begin{center}
+\includegraphics[scale=0.5]{schritt2}
+\end{center}
+Nun wird das nächste Zeichen eingelesen und die Intervallgrenzen entsprechend aktualisiert. Hat man dies nun für alle Zeichen der Eingabe durchgeführt, so liegt einem ein Intervall [a,b] vor.\\
+Alle Zahlen innerhalb dieses Intervalls sind korrekte Kodierungen für unsere Eingabe. Es gibt somit theoretisch unendlich viele Kodierungen für eine Eingabe x, nämlich alle Zahlen im Intervall [a,b].\\
+Da man bei einer Kodierung eine Eingabe aber natürlich mit möglichst wenig Bits kodieren möchte, wird die kürzeste Binärzahl genommen, welche im Intervall [a,b] liegt.\\
+Angenommen uns liegt am Ende das Intervall [0.78, 0.8] vor
+Es wird bei $0.1_2$ gestartet und geprüft, ob diese Zahl schon im Intervall [0.78, 0.8] liegt.\\
+Da $0.1_2 = 0.5_{10}$ noch unterhalb des Intervalls liegt, muss unsere Binärzahl erhöht werden.\\
+$0.11_2 = 0.75_{10}$ ist schon sehr Nahe an unserem Intervall, jedoch liegt es noch nicht darin.Da zweite Bit ist somit eine 1 und wir erhöhen um 1 Bit.\\
+$0.111_2 = 0.875_{10}$ liegt leider drüber, somit ist das dritte Bit eine 0.
+\\
+$0.1101_2 = 0.8125_{10}$ liegt wieder drüber, somit ist das vierte Bit eine 0.
+\\
+$0.11001_2 = 0.78125_{10}$ liegt nun endlich vollkommen in unserem Intervall [0.78, 0.8].
+\\
+0.11001 ist somit die kürzeste Kodierung für unsere Eingabe.
 		\section{Anwendungsgebiet}
 	Hier könnte ein kurzer Satz zur Einleitung stehen.
 	
 			\section{Qualitätsbewertung über das Verfahren}
 	Hier könnte ein kurzer Satz zur Einleitung stehen.
 	
+	\newpage
 			\section{Präsentation / Demonstration Kit}
 Wir haben bei der Visualisierung/der Umsetzung des Demonstrations Kit zwischen 2 Fällen unterschieden. Da es bei den Berechnungen während der Kodierung/Dekodierung zu Schwierigkeiten mit den Intervallgrenzen kommt (siehe Verfahren Beschreibung), haben wir ein \textbf{naives} und ein \textbf{genaues} Kit erstellt.
 \\
@@ -115,6 +137,7 @@ Hierfür haben wir auf das python-Modul \textbf{manim} zurückgegriffen. Dabei h
 \\
 Mittlerweile wird dieses Model jedoch durch die Community erweitert und bietet viele Möglichkeiten Themen aus dem MINT-Bereich visuell darzustellen.
 \subsection{naives Verfahren}
+\label{sec:manim}
 \subsubsection{Installation}
 Es wird das python-modul \textbf{manim}, sowie viele kleine weitere module wie z.B. \textbf{ffmpeg} benötigt, welche jedoch automatisch mit \textbf{manim} heruntergeladen werden.\\
 Der Installationsvorgang wird unter \href{https://docs.manim.community/en/stable/installation.html}{https://docs.manim.community/en/stable/installation.html}
@@ -160,85 +183,37 @@ numbers=none]
 .\Seminar-Datenkompression-2022\python%\media\videos\decodin\480p15\Decoding.mp4
 \end{lstlisting}
 gespeichert.
-\\
-\\
+
 \subsection{genaues Verfahren}
-\subsection{Kodierung}
+\label{sec:genaues-Verfahren}
+Hierfür bitte die html Datei \textbf{Datenkompression.html} unter \textit{./Seminar-Datenkompression-2022/HTML} öffnen. Die erscheinende Seite, implementiert unsere Kodierungen/Dekodierungen gebündelt in einer html. Hier werden jedoch keine Animationen angezeigt. (Verweis auf \ref{sec:manim})
+\subsubsection{Kodierung}
 Für die Kodierung wird eine Eingabe im Eingabefeld erwartet. Falls gewünscht kann man sich mit dem Button \textbf{Generiere Wahrscheinlichkeiten}, die Wahrscheinlichkeitsverteilung der Eingabe anzeigen lassen.
+\\
+Um nun eine genaue Kodierung berechnen zu lassen, nach Eingabe ins obere Feld, den Button \textbf{Starte Genaues-Kompressionsverfahren} drücken.
+\\
+Anschließend wird der kodierte Binärstring im unteren Feld angezeigt.\\
+
+\subsubsection{Dekodierung}
+Um den kodierten Binärstring zu dekodieren, sollte man am besten kurz das obere Eingabefeld manuell leeren. Fügt man nun den kodierten Binärstring ins untere Feld ein und drückt auf \textbf{Starte Genaues-Dekompressionsverfahren}, so wird einem die Dekodierung im oberen Feld angezeigt.
 
 
-	
+\subsection{naive HTML-Kodierung}
+Auf der HTML Seite kann man zusätzlich noch einmal das naive Verfahren ausführen lassen. Das Vorgehen ist analog zu \ref{sec:genaues-Verfahren}.\\
+\textit{Anmerkung: Die Kodierung weicht leicht von der Kodierung in den Animationen ab, da der Algorithmus anders implementiert wurde.}
+
+
 	
 	
 	
 % wird am Ende entfernt. Dient nur zur Referenz für gewisse commands
 
-	
-	\section{temp}
-	wird am Ende entfernt. Dient nur zur Referenz für gewisse commands\\
-	Man könnte sich auf Abschnitt \ref{sec:einunterabschnitt} beziehen. Oder auf Formeln
-	(\ref{eqn:formel_v}) und (\ref{eqn:formel_e}) und auf Abbildung \ref{fig:bspgraph}.	
-	
-	\subsection{Ein Unterabschnitt}
-	\label{sec:einunterabschnitt}
-	Dies ist der Text von einem Unterabschnitt.
-	
-	\begin{figure}[h]
-		\begin{center}
-			\begin{tikzpicture}
-				\node[shape=circle,draw=black] (3) at (0,0) {$v_3$};
-				\node[shape=circle,draw=black] (2) at (0,2) {$v_2$};
-				\node[shape=circle,draw=black] (4) at (2,2) {$v_4$};
-				\node[shape=circle,draw=black] (5) at (2,0) {$v_5$};
-				\node[shape=circle,draw=black] (1) at (-1.5,1) {$v_1$};
-				\node[shape=circle,draw=black] (6) at (3.5, 1) {$v_6$};
-				
-				\path [-] (3) edge node[auto] {$1.5$} (2);
-				\path [-] (4) edge node[auto] {$2$} (5);
-				\path [-] (1) edge node[auto] {$4.5$} (2);
-				\path [-] (2) edge node[auto] {$2.5$} (4);
-				\path [-] (3) edge node[auto] {$6$} (5);
-				\path [-] (1) edge node[auto, left, yshift=-0.3cm] {$2$} (3);
-				\path [-] (4) edge node[auto] {$7$} (6);
-				\path [-] (5) edge node[auto, right, yshift=-0.2cm] {$4$} (6);
-				
-				\draw[red, very thick, dashed] (-1.5,-0.3) .. controls (-1.5,1.2) and (1,0) .. (1.7,2.5);
-			\end{tikzpicture}
-			\caption{Ein Beispielgraph mit eingezeichneter gestrichelter Linie.}
-			\label{fig:bspgraph}
-		\end{center}
-	\end{figure}
-	
-	\noindent
-	Hier könnte auch noch etwas Text stehen.
-	
-	
-	\subsection{Ein weiterer Unterabschnitt}
-	Hier könnten Formeln stehen, z.B.
-	\begin{align*}
-		n^{2} + 2n + 40 = \O(n^{2})
-	\end{align*}
-	Manchmal möchte man auch Formeln nummerieren, zum Beispiel
-	\begin{align}
-		V &= \{v_1, \dots, v_n\} \label{eqn:formel_v}\\
-		E &= \{\{v_{i}, v_{j}\}\ |\ j \in \{1, \dots, n-1\},\ i = j+1\} \label{eqn:formel_e}
-	\end{align}
-	
-
-	\begin{remark} ``Pythagoras (geb. um 570 v.Chr.) gilt traditionell als der Entdecker des als Satz des Pythagoras bekannten Lehrsatzes der Euklidischen Geometrie über das rechtwinklige Dreieck. Dieser Satz war schon Jahrhunderte vor Pythagoras den Babyloniern bekannt. Ob sie aber einen Beweis für den Satz kannten, ist unbekannt. Zhmud meint, Pythagoras habe einen Beweis gefunden, während Burkert im Sinne der Schamanismusthese argumentiert, dafür gebe es keinen Beleg und Pythagoras habe sich für mathematische Beweisführung gar nicht interessiert.'' \cite{WIKI}
-	\end{remark}
-	
-
-	
-	\subsection{Der nächste Abschnitt}
-	Vielleicht möchte man hierfür eine neue Seite beginnen und Bezug auf \cite{einequelle} oder \cite{eineanderequelle}
-	nehmen.
-	
+		
 		\newpage
 	
 	\begin{thebibliography}{2}
-		\bibitem{einequelle} Namen der Autoren, \textit{Name des Artikels}, Name der Veröffentlichung, Datum, S. 42-46
-		\bibitem{eineanderequelle} Namen der anderen Autoren, \textit{Name des anderen Artikels}, Name der anderen Veröffentlichung, Datum, S. 10-20
-		\bibitem{WIKI} Wikipedia
+		\bibitem{mark-nelson} Mark Nelson. (2014, October 19). Data compression with arithmetic coding. Mark Nelson. Retrieved January 12, 2023, from https://marknelson.us/posts/2014/10/19/data-compression-with-arithmetic-coding.html 
+		
+		\bibitem{WIKI} Wikimedia Foundation. (n.d.). Arithmetisches Kodieren. Wikipedia. Retrieved January 12, 2023, from https://de.wikipedia.org/wiki/Arithmetisches\_Kodieren
 	\end{thebibliography}
 \end{document}
