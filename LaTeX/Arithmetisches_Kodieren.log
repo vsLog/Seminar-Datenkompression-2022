@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.8)  12 JAN 2023 23:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.8)  15 JAN 2023 19:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -804,12 +804,12 @@ File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 
 {C:/Users/vscho/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 (Arithmetisches_Kodieren.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
 
 (C:\Users\vscho\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 
 (C:\Users\vscho\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -822,45 +822,41 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.87 \tableofcontents\newpage
-                              [1] [2]
-<schritt1.jpg, id=97, 684.156pt x 221.628pt>
-File: schritt1.jpg Graphic file (type jpg)
-<use schritt1.jpg>
-Package pdftex.def Info: schritt1.jpg  used on input line 100.
-(pdftex.def)             Requested size: 342.07716pt x 110.81372pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
-
- []
-
-<schritt2.jpg, id=98, 560.69475pt x 196.3335pt>
-File: schritt2.jpg Graphic file (type jpg)
-<use schritt2.jpg>
-Package pdftex.def Info: schritt2.jpg  used on input line 105.
-(pdftex.def)             Requested size: 280.34668pt x 98.1665pt.
-[3 <./schritt1.jpg> <./schritt2.jpg>] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 129--139
+l.88 \tableofcontents\newpage
+                              [1]
+<enc-schritt1.jpg, id=108, 924.45375pt x 329.43076pt>
+File: enc-schritt1.jpg Graphic file (type jpg)
+<use enc-schritt1.jpg>
+Package pdftex.def Info: enc-schritt1.jpg  used on input line 106.
+(pdftex.def)             Requested size: 369.77495pt x 131.76996pt.
+<enc-schritt2.png, id=109, 766.062pt x 431.81325pt>
+File: enc-schritt2.png Graphic file (type png)
+<use enc-schritt2.png>
+Package pdftex.def Info: enc-schritt2.png  used on input line 110.
+(pdftex.def)             Requested size: 383.03006pt x 215.90608pt.
+ [2 <./enc-schritt1.jpg>] [3 <./enc-schritt2.png>]
+<dec-schritt1.jpg, id=123, 965.40675pt x 328.8285pt>
+File: dec-schritt1.jpg Graphic file (type jpg)
+<use dec-schritt1.jpg>
+Package pdftex.def Info: dec-schritt1.jpg  used on input line 126.
+(pdftex.def)             Requested size: 386.15587pt x 131.52907pt.
+<dec-schritt2.png, id=125, 766.66425pt x 429.40425pt>
+File: dec-schritt2.png Graphic file (type png)
+<use dec-schritt2.png>
+Package pdftex.def Info: dec-schritt2.png  used on input line 134.
+(pdftex.def)             Requested size: 383.33119pt x 214.70158pt.
+ [4 <./dec-schritt1.jpg> <./dec-schritt2.png>] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 147--157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--139
+Underfull \hbox (badness 10000) in paragraph at lines 147--157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--146
+Underfull \hbox (badness 10000) in paragraph at lines 160--164
 
  []
 
@@ -871,51 +867,48 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-49.
+67.
 
 (C:\Users\vscho\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-[5]
-Overfull \hbox (25.82713pt too wide) in paragraph at lines 189--190
+[6]
+Overfull \hbox (25.82713pt too wide) in paragraph at lines 208--209
 \T1/cmr/m/n/10 Hierfür bit-te die html Da-tei \T1/cmr/bx/n/10 Da-ten-kom-pres-s
 i-on.html \T1/cmr/m/n/10 un-ter \T1/cmr/m/it/10 ./Seminar-Datenkompression-2022
 /HTML
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--196
+Underfull \hbox (badness 10000) in paragraph at lines 210--215
 
  []
 
-[6] [7] (Arithmetisches_Kodieren.aux)
+[7] [8] (Arithmetisches_Kodieren.aux)
 Package rerunfilecheck Info: File `Arithmetisches_Kodieren.out' has not changed
 .
-(rerunfilecheck)             Checksum: 9B379EC778FD5852FA7DCB4CC20258EF;2008.
+(rerunfilecheck)             Checksum: CD9B22189BBD9017E66FB5E249504A20;2534.
  ) 
 Here is how much of TeX's memory you used:
- 23399 strings out of 475380
- 431484 string characters out of 2776773
- 929112 words of memory out of 3000000
- 44348 multiletter control sequences out of 15000+600000
+ 23432 strings out of 475380
+ 432180 string characters out of 2776773
+ 930519 words of memory out of 3000000
+ 44375 multiletter control sequences out of 15000+600000
  482215 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,5n,89p,632b,1209s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti
-1000.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ectt0800.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+ 84i,5n,89p,643b,1209s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
+0800.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecti1000.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
 /dpi600\ecrm1000.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
 pen/ec/dpi600\ecbx1000.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour
 /jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/
 ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fon
 ts/pk/ljfour/jknappen/ec/dpi600\ecxc1728.pk> <C:\Users\vscho\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2074.pk><C:/Users/vscho/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/vscho/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/vs
-cho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-Output written on Arithmetisches_Kodieren.pdf (8 pages, 206366 bytes).
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2074.pk>
+Output written on Arithmetisches_Kodieren.pdf (9 pages, 276142 bytes).
 PDF statistics:
- 515 PDF objects out of 1000 (max. 8388607)
- 37 named destinations out of 1000 (max. 500000)
- 135 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 545 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 

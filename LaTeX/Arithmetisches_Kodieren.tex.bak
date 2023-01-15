@@ -79,46 +79,63 @@
 				Dozent: {Dr.- Ing. The Anh Vuong} \\
 Graphische Daten Verarbeitung, Informatik Institut
 \\
-Goethe Universität , Frankfurt am Main
+Goethe Universität, Frankfurt am Main
+\\
+vorgelegt am xx.01.2023 %TODO
 }
 	\end{center}
-
 \end{titlepage}
 \tableofcontents\newpage
 %\listoffigures\newpage
 	
 \section{Thema}
 \label{sec:Thema}
-Arithmetisches Kodieren ist eine Form der Entropiekodierung. Im Gegensatz zu anderen Entropiekodierungen wie z.B. der Huffman-Kodierung, wo ein Baum erstellt wird um anschließend für jedes Zeichen eine individuelle Kodierung zu berechnen, wird beim Arithmetischen Kodieren eine lange binäre Fließkommazahl ausgegeben, welche die komplette Eingabe kodiert. Es findet also keine Kodierung kleinerer Komponente statt, sondern es wird Zeichen für Zeichen kodiert. Hierdurch werden Kompressionsraten erreicht, welche sehr nahe am theoretischen Limit der Entropie liegen.\cite{WIKI}
+Arithmetisches Kodieren ist eine Form der Entropiekodierung. Im Gegensatz zu anderen Entropiekodierungen wie z.B. der Huffman-Kodierung, wo zunächst ein Baum erstellt wird, um anschließend für jedes Zeichen eine individuelle Kodierung zu berechnen, wird beim Arithmetischen Kodieren eine lange binäre Fließkommazahl ausgegeben, welche die komplette Eingabe kodiert. Es findet also keine Kodierung kleinerer Komponente statt, sondern es wird Zeichen für Zeichen kodiert. Hierdurch werden Kompressionsraten erreicht, welche sehr nahe am theoretischen Limit der Entropie liegen.\cite{WIKI}
+
 		\section{Theoretische Grundlagen}
-Ein wichtiger 
-	
-	\newpage
+Das Verfahren stützt sich wie auch viele andere Kompressionsverfahren auf die Stochastik. So wird zu Beginn die Häufigkeit und die entsprechende Wahrscheinlichkeit für jedes Zeichen einer Eingabe berechnet. Das Verständnis von Binary-Search wird vorausgesetzt und nicht genauer erklärt, da dies auch keine Charakteristik des Kompressionsverfahrens beschreibt, sondern nur zur Berechnung einer binären Zahl innerhalb eines Intervalles dient \textit{(siehe \ref{sec:Verfahren-Kodierung})}.
+
+
+
 		\section{Verfahren-Beschreibung}
-Zunächst wird für die Eingabe die Häufigkeiten aller vorkommenden Zeichen berechnet. Anschließend wird das Interval [0,1] entsprechend dieser Häufigkeiten aufgeteilt. Dies wird gemacht, da am Ende  beim Arithmetischen Kodieren die Eingabe als eine beliebig lange Fließkommazahl kodiert wird. Legen wir nun das Intervall [0,1] fest, so wird der später kodierte String irgendwo zwischen 0 und 1 liegen.
+		\subsection{Kodierung}
+		\label{sec:Verfahren-Kodierung}
+Zunächst wird für die Eingabe die Häufigkeit aller vorkommenden Zeichen berechnet. Anschließend wird das Interval [0,1] entsprechend dieser Häufigkeiten aufgeteilt. Dies wird gemacht, da am Ende  beim Arithmetischen Kodieren die Eingabe als eine beliebig lange Fließkommazahl kodiert wird. Legen wir nun das Intervall [0,1] fest, so wird der später kodierte String irgendwo zwischen 0 und 1 liegen.
 So könnte z.B für die Eingabe \textbf{Hello} folgende Startbedingung erstellt werden.
-\\\\
-\includegraphics[scale=0.5]{schritt1}
-\\\\
-Nun wird das erste Zeichen eingelesen. Dessen Intervall wird nun das komplette Intervall ersetzen. Die Verhältnisse der Intervalle untereinander ändert sich nicht. Es werden lediglich die Grenzen aktualisiert.
-\\
 \begin{center}
-\includegraphics[scale=0.5]{schritt2}
+\includegraphics[scale=0.4]{enc-schritt1}
 \end{center}
-Nun wird das nächste Zeichen eingelesen und die Intervallgrenzen entsprechend aktualisiert. Hat man dies nun für alle Zeichen der Eingabe durchgeführt, so liegt einem ein Intervall [a,b] vor.\\
+Nun wird das erste Zeichen eingelesen. Dessen Intervall wird nun das komplette Intervall ersetzen. Die Verhältnisse der Intervalle untereinander ändert sich nicht. Es werden lediglich die Grenzen aktualisiert. Anschließend wird das nächste Zeichen eingelesen und die Intervallgrenzen entsprechend aktualisiert. Hat man dies nun für alle Zeichen der Eingabe durchgeführt, so liegt einem ein Intervall [a,b] vor.
+\begin{center}
+\includegraphics[scale=0.5]{enc-schritt2}
+\end{center}
 Alle Zahlen innerhalb dieses Intervalls sind korrekte Kodierungen für unsere Eingabe. Es gibt somit theoretisch unendlich viele Kodierungen für eine Eingabe x, nämlich alle Zahlen im Intervall [a,b].\\
 Da man bei einer Kodierung eine Eingabe aber natürlich mit möglichst wenig Bits kodieren möchte, wird die kürzeste Binärzahl genommen, welche im Intervall [a,b] liegt.\\
-Angenommen uns liegt am Ende das Intervall [0.78, 0.8] vor
-Es wird bei $0.1_2$ gestartet und geprüft, ob diese Zahl schon im Intervall [0.78, 0.8] liegt.\\
-Da $0.1_2 = 0.5_{10}$ noch unterhalb des Intervalls liegt, muss unsere Binärzahl erhöht werden.\\
-$0.11_2 = 0.75_{10}$ ist schon sehr Nahe an unserem Intervall, jedoch liegt es noch nicht darin.Da zweite Bit ist somit eine 1 und wir erhöhen um 1 Bit.\\
-$0.111_2 = 0.875_{10}$ liegt leider drüber, somit ist das dritte Bit eine 0.
+Dies kann z.B. durch einen Binary-Search Algorithmus erreicht werden. In unserem Fall wäre 0.11001 eine mögliche Kodierung für das Interval [0.78, 0.8].
+
+\subsection{Problematik - Finite-Precision Arithmetic Coding}
+\label{sec:Problematik}
+Normalerweise werden Zahlen mit 32 oder 64 Bit precision gespeichert. Das wird für uns ein Problem, da die Intervallgrenzen sich immer stärker annähern. Dies führt unvermeidlich zu einem Intervall, in welchem beide Grenzen den gleichen Wert annehmen [a,a] und  fortan falsch Kodieren würde.\\
+Es existieren mehrere Möglichkeiten, um diese Problematik mehr oder weniger effektiv zu umgehen.\\
+Oft direkt nach einem kodierten Zeichen, geschaut ob die Zahl im Intervall [0, 0.5] oder [0.5, 1] liegt und das jeweilige Intervall anschließend normalisiert, sodass Rechnungen mit hoher Präzision nie auftreten.
+
+\newpage
+\subsection{Dekodierung}
+Hier wird als Eingabe ein kodierte Binärzahl x erwartet. Diese wird anschließend in eine Dezimalzahl umgerechnet. Ebenso wird eine Häufigkeitsverteilung aller Zeichen als Eingabe erwartet. Aus dieser wird analog zu \ref{sec:Verfahren-Kodierung} das Intervall [0,1] im Hinblick auf die Zeichen aufgeteilt. Eine Startbedingung könnte folgendermaßen aussehen:
+\begin{center}
+\includegraphics[scale=0.4]{dec-schritt1}
+\end{center}
+Durch die Häufigkeitsangaben wissen wir, dass die Dekodierung aus genau 5 Zeichen besteht.\\
+Im ersten Schritt wird die Dezimalzahl x auf dem Intervall gesucht. Das kodierte Zeichen entspricht nun dem Intervall in welchem sich x befindet \textit{(also H)}.
 \\
-$0.1101_2 = 0.8125_{10}$ liegt wieder drüber, somit ist das vierte Bit eine 0.
-\\
-$0.11001_2 = 0.78125_{10}$ liegt nun endlich vollkommen in unserem Intervall [0.78, 0.8].
-\\
-0.11001 ist somit die kürzeste Kodierung für unsere Eingabe.
+Anschließend werden die Intervallgrenzen analog zu \ref{sec:Verfahren-Kodierung}
+aktualisiert und x erneut auf dem Intervall [0, 0.2] gesucht.
+\begin{center}
+\includegraphics[scale=0.5]{dec-schritt2}
+\end{center}
+Haben wir dies 5 mal durchgeführt erhalten wird unseren dekodierten String \textit{(Hello)}.
+\newpage
+
 		\section{Anwendungsgebiet}
 	Hier könnte ein kurzer Satz zur Einleitung stehen.
 	
@@ -127,14 +144,14 @@ $0.11001_2 = 0.78125_{10}$ liegt nun endlich vollkommen in unserem Intervall [0.
 	
 	\newpage
 			\section{Präsentation / Demonstration Kit}
-Wir haben bei der Visualisierung/der Umsetzung des Demonstrations Kit zwischen 2 Fällen unterschieden. Da es bei den Berechnungen während der Kodierung/Dekodierung zu Schwierigkeiten mit den Intervallgrenzen kommt (siehe Verfahren Beschreibung), haben wir ein \textbf{naives} und ein \textbf{genaues} Kit erstellt.
+Wir haben bei der Visualisierung/der Umsetzung des Demonstrations Kit zwischen 2 Fällen unterschieden. Da es bei den Berechnungen während der Kodierung/Dekodierung zu Schwierigkeiten mit den Intervallgrenzen kommt (siehe \ref{sec:Problematik}), haben wir ein \textbf{naives} und ein \textbf{genaues} Kit erstellt.
 \\
 \\
-Das naive Kit erstellt eine gut verständliche, visuelle Animation. Jedoch funktioniert dieses Verfahren nur für relativ kleine Eingaben wie z.B ``Hello'' oder ``Laterne''. Bei größeren Eingaben benötigt die Erstellung der Animation erheblich länger. Da dieses Verfahren auch nicht das TODO umsetzt, kommt es hier bei größeren Eingaben zu den in Kapitel 3 erwähnten Rundungsfehlern. Auf kurzen Eingaben ist jedoch eine korrekte
+Das naive Kit erstellt eine gut verständliche, visuelle Animation. Jedoch funktioniert dieses Verfahren nur für relativ kleine Eingaben wie z.B ``Hello'' oder ``Laterne''. Bei größeren Eingaben benötigt die Erstellung der Animation erheblich länger. Da dieses Verfahren auch nicht das \textit{Finite-Precision Arithmetic Coding} umsetzt, kommt es hier bei größeren Eingaben zu den in \ref{sec:Problematik} erwähnten Fehlern. Auf kurzen Eingaben ist jedoch eine korrekte
 Kodierung/Dekodierung, sowie eine Erstellung einer visuell ansprechenden Animation kein Problem. 
 \\
 \\
-Hierfür haben wir auf das python-Modul \textbf{manim} zurückgegriffen. Dabei handelt es sich um ein Opensource-Projekt des Youtubers ``3Blue1Brown'', welcher es vor mehreren Jahren geschrieben hat, um visuell ansprechende Animationen ifür den Bereich der Mathematik zu erstellen.
+Hierfür haben wir auf das python-Modul \textbf{manim} zurückgegriffen. Dabei handelt es sich um ein Opensource-Projekt des Youtubers ``3Blue1Brown'', welcher es 2015 geschrieben hat, um visuell ansprechende Animationen für den Bereich der Mathematik zu erstellen.
 \\
 Mittlerweile wird dieses Model jedoch durch die Community erweitert und bietet viele Möglichkeiten Themen aus dem MINT-Bereich visuell darzustellen.
 \subsection{naives Verfahren}
@@ -160,6 +177,7 @@ Alternativ wurde die Animation unter
 .\SeminarDatenkompression-2022\pythno\media\videos%encodin\480p15\Encoding.mp4
 \end{lstlisting}
 gespeichert.
+\newpage
 \subsubsection{Dekodierung}
 Für die Dekodierung wird die Datei \textbf{decoding.py} mithilfe des Befehls
 \begin{lstlisting}[language=bash,
@@ -170,14 +188,14 @@ im terminal ausgeführt.
 Anschließend wird als Eingabe zuerst die zu dekodierende Binärzahl
 erfragt. Daraufhin wird eine Häufigkeitsverteilung der vorkommenden Buchstaben erfragt.
 Diese muss im Format eines python-Dictionaries eingegeben werden.
-z.B: TODO: ist Reihenfolge egal?
+\\
+Beispiele:
 \begin{lstlisting}[language=bash,
 numbers=none]
 {"H": 1, "e": 1, "l": 2, "o": 1}
 {"A": 1, "e": 1, "f": 2}
 \end{lstlisting}
-Daraufhin kann es je nach länge des Wortes 1-2 min dauern, bis die Animation erstellt
-wurde, welche sich direkt in einem neuen Fenster öffnet und angeschaut werden kann.
+Daraufhin kann es je nach Länge des Wortes mehrere Minuten dauern, bis die Animation erstellt wurde, welche sich direkt in einem neuen Fenster öffnet und angeschaut werden kann.
 Alternativ wurde die Animation unter
 \begin{lstlisting}[language=bash,
 numbers=none]
@@ -213,11 +231,9 @@ Auf der HTML Seite kann man zusätzlich noch einmal das naive Verfahren ausführ
 		\newpage
 	
 	\begin{thebibliography}{2}
-		\bibitem{einequelle} Namen der Autoren, \textit{Name des Artikels}, Name der Veröffentlichung, Datum, S. 42-46
-		\bibitem{eineanderequelle} Namen der anderen Autoren, \textit{Name des anderen Artikels}, Name der anderen Veröffentlichung, Datum, S. 10-20
-
-		\bibitem{mark-nelson} Mark Nelson. (2014, October 19). Data compression with arithmetic coding. Mark Nelson. Retrieved January 12, 2023, from https://marknelson.us/posts/2014/10/19/data-compression-with-arithmetic-coding.html  \href{https://de.wikipedia.org/wiki/Arithmetisches_Kodieren#Vergleich_zur_Huffman-Kodierung}{https://de.wikipedia.org/wiki/Arithmetisches\_Kodieren}		
+		\bibitem{mark-nelson} Mark Nelson. (2014, October 19). Data compression with arithmetic coding. Mark Nelson. Retrieved January 12, 2023, from https://marknelson.us/posts/2014/10/19/data-compression-with-arithmetic-coding.html 
 		
 		\bibitem{WIKI} Wikimedia Foundation. (n.d.). Arithmetisches Kodieren. Wikipedia. Retrieved January 12, 2023, from https://de.wikipedia.org/wiki/Arithmetisches\_Kodieren
-	\end{thebibliography}
+	
+		\bibitem{3blue1brown} Wikimedia Foundation. (2022, December 30). 3Blue1Brown. Wikipedia. Retrieved January 15, 2023, from https://en.wikipedia.org/wiki/3Blue1Brown 
 \end{document}
