@@ -35,8 +35,8 @@ class Encoding(MovingCameraScene):
         t0 = Table(
             probabilities,
             row_labels=[Text(x) for x in frequencies],
-            col_labels=[Text("p(x)")],
-            top_left_entry=Text("x"),
+            col_labels=[Text("#")],
+            top_left_entry=Text("char"),
             include_outer_lines=True)
         # t0.add_highlighted_cell((1, 1), color=GREEN)
         x_coord = surrounding_rectangle.get_end()[0]
@@ -70,7 +70,7 @@ class Encoding(MovingCameraScene):
         self.play(Create(begin_interval_left), Create(begin_interval_right))
         for rec in rec_groups:
             self.play(Create(rec))
-
+        
         left, right = 0, 1
         freq_dict = {}
         for i in list(frequencies.keys()):
@@ -83,11 +83,13 @@ class Encoding(MovingCameraScene):
             l_interval = Text(str(round(interval_dict[letter][0], 5))).scale(0.3).next_to(l_arrow, DOWN)
             r_interval = Text(str(round(interval_dict[letter][1], 5))).scale(0.3).next_to(r_arrow, DOWN)
 
+            self.play(ScaleInPlace(input_table[i], 3/2))
             self.play(input_table[i].animate.set_color(BLUE))
-            self.play(ScaleInPlace(symbol_dict[letter], 2))
-            self.play(symbol_dict[letter].animate.set_color(BLUE))
-            self.play(rec_dict[letter].animate.set_color(BLUE))
-            self.play(ScaleInPlace(symbol_dict[letter], 0.5))
+            self.play(ScaleInPlace(input_table[i], 2/3))
+            self.play(ScaleInPlace(symbol_dict[letter], 2), run_time=0.8)
+            #self.play(symbol_dict[letter].animate.set_color(BLUE))
+            self.play(symbol_dict[letter].animate.set_color(BLUE), rec_dict[letter].animate.set_color(BLUE))
+            self.play(ScaleInPlace(symbol_dict[letter], 0.5), run_time=0.8)
 
             left = interval_dict[letter][0]
             right = interval_dict[letter][1]

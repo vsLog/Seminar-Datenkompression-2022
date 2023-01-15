@@ -24,7 +24,7 @@ class Decoding(MovingCameraScene):
         for i in range(2, len(encoded)):
             if encoded[i] == "1":
                 encoded_converted += 2 ** -(i - 1)
-        input_string = encoded + "(2) = " + str(encoded_converted) + "(10)"
+        input_string = encoded + "_2 = " + str(encoded_converted) + "_{10}"
         letters = list(frequencies.keys())
         probabilities = [[str(x)] for x in list(frequencies.values())]
 
@@ -35,8 +35,8 @@ class Decoding(MovingCameraScene):
         t0 = Table(
             probabilities,
             row_labels=[Text(x) for x in frequencies],
-            col_labels=[Text("p(x)")],
-            top_left_entry=Text("x"),
+            col_labels=[Text("#")],
+            top_left_entry=Text("char"),
             include_outer_lines=True)
         # t0.add_highlighted_cell((1, 1), color=GREEN)
         x_coord = surrounding_rectangle.get_end()[0]
@@ -64,7 +64,7 @@ class Decoding(MovingCameraScene):
         # animations
         self.camera.frame.set(width=len(letters)*2 + 7)
         self.camera.frame.move_to(surrounding_rectangle.get_center())
-        self.play(Create(Text("x="+input_string).scale(0.5).next_to(surrounding_rectangle.get_corner(LEFT), 7*UP + RIGHT)))
+        self.play(Create(MathTex("x="+input_string).scale(0.5).next_to(surrounding_rectangle.get_corner(LEFT), 7*UP + RIGHT)))
         self.play(Create(t0), run_time=2)
         self.play(Create(surrounding_rectangle))
         self.play(Create(begin_interval_left), Create(begin_interval_right))
@@ -83,7 +83,7 @@ class Decoding(MovingCameraScene):
         while i < length_input:
             x = calc_point(encoded_converted, left, right, length_input*2)
             arrow = Line(start=[x, -0.5, 0], end=[x, 0.5, 0], color=WHITE)
-            arrow_txt = Text("x").scale(0.3).next_to(arrow, UP, buff=0.35)
+            arrow_txt = Text("x").scale(0.35).next_to(arrow, UP, buff=0.3)
             interval_dict = calc_interval(freq_dict, left, right)
             next_letter = find_rectangle(encoded_converted, interval_dict)
             l_arrow = Arrow(start=[rec_dict[next_letter].get_coord(0,LEFT), 0, 0], end=[rec_dict[next_letter].get_coord(0,LEFT), -1, 0], color=WHITE, tip_shape=ArrowSquareTip)
@@ -93,10 +93,10 @@ class Decoding(MovingCameraScene):
             self.play(Create(arrow))
             self.play(Create(arrow_txt))
 
-            self.play(ScaleInPlace(symbol_dict[next_letter], 2))
-            self.play(symbol_dict[next_letter].animate.set_color(BLUE))
-            self.play(rec_dict[next_letter].animate.set_color(BLUE))
-            self.play(ScaleInPlace(symbol_dict[next_letter], 0.5))
+            #self.play(ScaleInPlace(symbol_dict[next_letter], 2), run_time=0.5)
+            #self.play(symbol_dict[next_letter].animate.set_color(BLUE), run_time=0.5)
+            self.play(symbol_dict[next_letter].animate.set_color(BLUE), rec_dict[next_letter].animate.set_color(BLUE))
+            #self.play(ScaleInPlace(symbol_dict[next_letter], 0.5))
 
             left = interval_dict[next_letter][0]
             right = interval_dict[next_letter][1]
