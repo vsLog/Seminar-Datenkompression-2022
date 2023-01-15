@@ -151,7 +151,7 @@ Das naive Kit erstellt eine gut verständliche, visuelle Animation. Jedoch funkt
 Kodierung/Dekodierung, sowie eine Erstellung einer visuell ansprechenden Animation kein Problem. 
 \\
 \\
-Hierfür haben wir auf das python-Modul \textbf{manim} zurückgegriffen. Dabei handelt es sich um ein Opensource-Projekt des Youtubers ``3Blue1Brown'', welcher es 2015 geschrieben hat, um visuell ansprechende Animationen für den Bereich der Mathematik zu erstellen.
+Hierfür haben wir auf das python-Modul \textbf{manim} zurückgegriffen. Dabei handelt es sich um ein Opensource-Projekt des Youtubers ``3Blue1Brown'', welcher es 2015 geschrieben hat, um visuell ansprechende Animationen für den Bereich der Mathematik zu erstellen.\cite{3blue1brown}
 \\
 Mittlerweile wird dieses Model jedoch durch die Community erweitert und bietet viele Möglichkeiten Themen aus dem MINT-Bereich visuell darzustellen.
 \subsection{naives Verfahren}
@@ -232,8 +232,12 @@ Auf der HTML Seite kann man zusätzlich noch einmal das naive Verfahren ausführ
 	
 	\begin{thebibliography}{2}
 		\bibitem{mark-nelson} Mark Nelson. (2014, October 19). Data compression with arithmetic coding. Mark Nelson. Retrieved January 12, 2023, from https://marknelson.us/posts/2014/10/19/data-compression-with-arithmetic-coding.html 
+
+\bibitem{go} Arithmetic coding. The Hitchhiker's Guide to Compression. (n.d.). Retrieved January 15, 2023, from https://go-compression.github.io/algorithms/arithmetic/ 
 		
-		\bibitem{WIKI} Wikimedia Foundation. (n.d.). Arithmetisches Kodieren. Wikipedia. Retrieved January 12, 2023, from https://de.wikipedia.org/wiki/Arithmetisches\_Kodieren
+		\bibitem{WIKI} Wikimedia Foundation. (2022, November 6). Arithmetisches Kodieren. Wikipedia. Retrieved January 12, 2023, from https://de.wikipedia.org/wiki/Arithmetisches\_Kodieren
 	
 		\bibitem{3blue1brown} Wikimedia Foundation. (2022, December 30). 3Blue1Brown. Wikipedia. Retrieved January 15, 2023, from https://en.wikipedia.org/wiki/3Blue1Brown 
+		
+			\end{thebibliography}
 \end{document}

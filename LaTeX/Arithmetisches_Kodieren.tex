@@ -105,13 +105,14 @@ So könnte z.B für die Eingabe \textbf{Hello} folgende Startbedingung erstellt 
 \begin{center}
 \includegraphics[scale=0.4]{enc-schritt1}
 \end{center}
+\newpage
 Nun wird das erste Zeichen eingelesen. Dessen Intervall wird nun das komplette Intervall ersetzen. Die Verhältnisse der Intervalle untereinander ändert sich nicht. Es werden lediglich die Grenzen aktualisiert. Anschließend wird das nächste Zeichen eingelesen und die Intervallgrenzen entsprechend aktualisiert. Hat man dies nun für alle Zeichen der Eingabe durchgeführt, so liegt einem ein Intervall [a,b] vor.
 \begin{center}
 \includegraphics[scale=0.5]{enc-schritt2}
 \end{center}
 Alle Zahlen innerhalb dieses Intervalls sind korrekte Kodierungen für unsere Eingabe. Es gibt somit theoretisch unendlich viele Kodierungen für eine Eingabe x, nämlich alle Zahlen im Intervall [a,b].\\
 Da man bei einer Kodierung eine Eingabe aber natürlich mit möglichst wenig Bits kodieren möchte, wird die kürzeste Binärzahl genommen, welche im Intervall [a,b] liegt.\\
-Dies kann z.B. durch einen Binary-Search Algorithmus erreicht werden. In unserem Fall wäre 0.11001 eine mögliche Kodierung für das Interval [0.78, 0.8].
+Dies kann z.B. durch einen Binary-Search Algorithmus erreicht werden. So wäre 0.11001 eine mögliche Kodierung für das Interval [0.78, 0.8].
 
 \subsection{Problematik - Finite-Precision Arithmetic Coding}
 \label{sec:Problematik}

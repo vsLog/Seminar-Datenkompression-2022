@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.8)  15 JAN 2023 19:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.8)  15 JAN 2023 19:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -829,34 +829,35 @@ File: enc-schritt1.jpg Graphic file (type jpg)
 <use enc-schritt1.jpg>
 Package pdftex.def Info: enc-schritt1.jpg  used on input line 106.
 (pdftex.def)             Requested size: 369.77495pt x 131.76996pt.
-<enc-schritt2.png, id=109, 766.062pt x 431.81325pt>
+ [2 <./enc-schritt1.jpg>]
+<enc-schritt2.png, id=115, 766.062pt x 431.81325pt>
 File: enc-schritt2.png Graphic file (type png)
 <use enc-schritt2.png>
-Package pdftex.def Info: enc-schritt2.png  used on input line 110.
+Package pdftex.def Info: enc-schritt2.png  used on input line 111.
 (pdftex.def)             Requested size: 383.03006pt x 215.90608pt.
- [2 <./enc-schritt1.jpg>] [3 <./enc-schritt2.png>]
+ [3 <./enc-schritt2.png>]
 <dec-schritt1.jpg, id=123, 965.40675pt x 328.8285pt>
 File: dec-schritt1.jpg Graphic file (type jpg)
 <use dec-schritt1.jpg>
-Package pdftex.def Info: dec-schritt1.jpg  used on input line 126.
+Package pdftex.def Info: dec-schritt1.jpg  used on input line 127.
 (pdftex.def)             Requested size: 386.15587pt x 131.52907pt.
 <dec-schritt2.png, id=125, 766.66425pt x 429.40425pt>
 File: dec-schritt2.png Graphic file (type png)
 <use dec-schritt2.png>
-Package pdftex.def Info: dec-schritt2.png  used on input line 134.
+Package pdftex.def Info: dec-schritt2.png  used on input line 135.
 (pdftex.def)             Requested size: 383.33119pt x 214.70158pt.
  [4 <./dec-schritt1.jpg> <./dec-schritt2.png>] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 147--157
+Underfull \hbox (badness 10000) in paragraph at lines 148--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--157
+Underfull \hbox (badness 10000) in paragraph at lines 148--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--164
+Underfull \hbox (badness 10000) in paragraph at lines 161--165
 
  []
 
@@ -867,20 +868,20 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-67.
+68.
 
 (C:\Users\vscho\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 [6]
-Overfull \hbox (25.82713pt too wide) in paragraph at lines 208--209
+Overfull \hbox (25.82713pt too wide) in paragraph at lines 209--210
 \T1/cmr/m/n/10 Hierfür bit-te die html Da-tei \T1/cmr/bx/n/10 Da-ten-kom-pres-s
 i-on.html \T1/cmr/m/n/10 un-ter \T1/cmr/m/it/10 ./Seminar-Datenkompression-2022
 /HTML
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--215
+Underfull \hbox (badness 10000) in paragraph at lines 211--216
 
  []
 
@@ -892,7 +893,7 @@ Package rerunfilecheck Info: File `Arithmetisches_Kodieren.out' has not changed
 Here is how much of TeX's memory you used:
  23432 strings out of 475380
  432180 string characters out of 2776773
- 930519 words of memory out of 3000000
+ 931519 words of memory out of 3000000
  44375 multiletter control sequences out of 15000+600000
  482215 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -906,7 +907,7 @@ pen/ec/dpi600\ecbx1000.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour
 ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fon
 ts/pk/ljfour/jknappen/ec/dpi600\ecxc1728.pk> <C:\Users\vscho\AppData\Local\MiKT
 eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2074.pk>
-Output written on Arithmetisches_Kodieren.pdf (9 pages, 276142 bytes).
+Output written on Arithmetisches_Kodieren.pdf (9 pages, 276168 bytes).
 PDF statistics:
  545 PDF objects out of 1000 (max. 8388607)
  43 named destinations out of 1000 (max. 500000)
