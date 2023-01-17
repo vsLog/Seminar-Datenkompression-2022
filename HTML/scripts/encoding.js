@@ -30,6 +30,7 @@ THE SOFTWARE.
 
 */
 
+
 /**
  * Encodes the input of the textfield "input_area" to a number between 0 and 1.
  * Uses a naive algorithm ignoring the limited precision of number in the computer.
@@ -42,7 +43,7 @@ encodeInput = function() {
     sessionStorage.setItem("totalChars", totalChars);
     sessionStorage.setItem("charMap", JSON.stringify(Array.from(charMap.entries())));
     createCharElement(charMap, totalChars);
-    encodedInput = encode(input, totalChars, charMap);
+    let encodedInput = encode(input, totalChars, charMap);
     document.getElementById("output_area").value = encodedInput;
 }
 
@@ -102,7 +103,11 @@ encodeInputPrecise = function() {
     sessionStorage.setItem("charMap", JSON.stringify(Array.from(charMap.entries())));
     document.getElementById("output_area").value = "";
     createCharElement(charMap, totalChars);
-    encodePrecice(input, totalChars, charMap);
+    let output = encodePrecice(input, totalChars, charMap);
+    console.log(output);
+    // Bootstrap 3.4.1 css leads to crashes when trying to copy large strings composed of only 0 and 1 (around 1 million chars)
+    // Works in Bootstrap 4.6.2 css and 5.2.3 css
+    document.getElementById("output_area").value = output;
 }
 
 /**
@@ -113,8 +118,34 @@ encodeInputPrecise = function() {
  * @param {string} input - input String
  * @param {number} totalChars - total number of chars
  * @param {Map} charMap - Character occurrence map
+ * @returns {number} output - binary number
  */
 encodePrecice = function(input, totalChars, charMap) {
+    /**
+     * Output the pending bits.
+     * Uses Mark Nelson's c++ algorithm modified to fit our needs and javascript.
+     * For a deeper insight into the how and why see his article:
+     * http://marknelson.us/2014/10/19/data-compression-with-arithmetic-coding
+     * @param {boolean} bit - output bit
+     * @param {number} pending_bits - number of pending bits
+     */
+    output_bit_plus_pending = function(bit, pending_bits) {
+        output_bit(bit);
+        while (pending_bits--) {
+            output_bit(!bit);
+        }    
+    }
+
+    /**
+     * Output the bit to the "output_area".
+     * @param {boolean} bit - output bit
+     */
+    output_bit = function(bit) {
+        //document.getElementById("output_area").value += bit*1; // leads to heavy workload on larger inputs
+        output = output.concat(bit*1);
+    }
+
+    let output = "";
     var charIntervals = generateCharIntervalsPrecice(charMap);
     // creates Arrays containing 32Bit numbers to recreate c++ int
     var uint32Bounds = new Uint32Array([0, 0xFFFFFFFF]);
@@ -149,7 +180,7 @@ encodePrecice = function(input, totalChars, charMap) {
             else { 
                 break;
             }
-        } 
+        }
     }
     pending_bits++;
     if (uint32Bounds[0] < uint32IfConstans[1]) {
@@ -158,29 +189,8 @@ encodePrecice = function(input, totalChars, charMap) {
     else {
         output_bit_plus_pending(1, pending_bits);
     }
-}
 
-/**
- * Output the pending bits.
- * Uses Mark Nelson's c++ algorithm modified to fit our needs and javascript.
- * For a deeper insight into the how and why see his article:
- * http://marknelson.us/2014/10/19/data-compression-with-arithmetic-coding
- * @param {boolean} bit - output bit
- * @param {number} pending_bits - number of pending bits
- */
-output_bit_plus_pending = function(bit, pending_bits) {
-    output_bit(bit);
-    while (pending_bits--) {
-        output_bit(!bit);
-    }    
-}
-
-/**
- * Output the bit to the "output_area".
- * @param {boolean} bit - output bit
- */
-output_bit = function(bit) {
-    document.getElementById("output_area").value += bit*1;
+    return output;
 }
 
 /**
