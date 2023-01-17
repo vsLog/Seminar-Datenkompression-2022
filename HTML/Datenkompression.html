@@ -65,8 +65,11 @@
                 Sowohl das encodieren als auch das decodieren nutzt die Wahrscheinlichkeitsverteilung der zuletzt encodierten Eingabe.
             </p>
             <p>
-                Warnung! Bootstrap css führt bei großen Eingaben zu Problemen. Beim Versuch, eine große Binärzahl (bei mir: mit mehr als 1 Millionen Stellen)
-                in das Textfeld zu kopieren, stürzt der Algorithmus ab. Man kann aber einfach die css. Datei auskommentieren  und dann funktioniert es (Die Progressbar aber nicht).
+                Für das (De-)Kompressionsverfahren wird eine in Javascript umgeschriebene und leicht angepasste Version des Codes von      
+                Mark Nelson c++ Code genutzt, welchen er in seinem Article 
+                <a href="https://marknelson.us/posts/2014/10/19/data-compression-with-arithmetic-coding.html">"Data Compression With Arithmetic Coding"</a> (Stand 17.1.2023) 
+                Schrittweise erklärt.
+  
             </p>
         </div>
         <div class="calculationContainer"> 

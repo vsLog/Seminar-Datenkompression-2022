@@ -27,6 +27,8 @@ THE SOFTWARE.
  by Mark Nelson's article:
  Data Compression With Arithmetic Coding
  published at: http://marknelson.us/2014/10/19/data-compression-with-arithmetic-coding
+ new link: https://marknelson.us/posts/2014/10/19/data-compression-with-arithmetic-coding.html
+ (working 17th January 2023)
 
 */
 
@@ -118,7 +120,7 @@ encodeInputPrecise = function() {
  * Encodes the input to a binary number using the relative occurences of each char.
  * Uses Mark Nelson's c++ algorithm modified to fit our needs and javascript.
  * For a deeper insight into the how and why see his article:
- * http://marknelson.us/2014/10/19/data-compression-with-arithmetic-coding
+ * https://marknelson.us/posts/2014/10/19/data-compression-with-arithmetic-coding.html
  * @param {string} input - input String
  * @param {number} totalChars - total number of chars
  * @param {Map} charMap - Character occurrence map
@@ -129,7 +131,7 @@ encodePrecice = function(input, totalChars, charMap) {
      * Output the pending bits.
      * Uses Mark Nelson's c++ algorithm modified to fit our needs and javascript.
      * For a deeper insight into the how and why see his article:
-     * http://marknelson.us/2014/10/19/data-compression-with-arithmetic-coding
+     * https://marknelson.us/posts/2014/10/19/data-compression-with-arithmetic-coding.html
      * @param {boolean} bit - output bit
      * @param {number} pending_bits - number of pending bits
      */
