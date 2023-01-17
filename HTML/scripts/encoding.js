@@ -104,10 +104,14 @@ encodeInputPrecise = function() {
     document.getElementById("output_area").value = "";
     createCharElement(charMap, totalChars);
     let output = encodePrecice(input, totalChars, charMap);
-    console.log(output);
     // Bootstrap 3.4.1 css leads to crashes when trying to copy large strings composed of only 0 and 1 (around 1 million chars)
     // Works in Bootstrap 4.6.2 css and 5.2.3 css
     document.getElementById("output_area").value = output;
+    document.getElementById("inputSize").innerHTML =    "Eingabe Zeichen Länge ".concat(input.length);
+    document.getElementById("inputBit").innerHTML =     "Eingabe Bit     Länge ".concat(input.length*8);
+    document.getElementById("outputSize").innerHTML =   "Ausgabe Zeichen Länge ".concat(output.length);
+    document.getElementById("outputBit").innerHTML =    "Ausgabe Bit     Länge".concat(output.length);
+    document.getElementById("savedBit").innerHTML =     "Prozentualer Unterschied ".concat(Math.round((output.length-input.length*8)/(input.length*8)*100)).concat("%");
 }
 
 /**

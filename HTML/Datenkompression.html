@@ -118,28 +118,49 @@
             <div class="subCalculationContainer"> 
                 <div class="standardContainer">
                     <button class="aktionButton" type="button" onclick="encodeInput()">Starte Naives-Kompressionsverfahren</button>
-                </div> 
-                <div class="standardContainer">
                     <button class="aktionButton" type="button" onclick="encodeInputPrecise()">Starte Genaues-Kompressionsverfahren</button>
                 </div> 
             </div>
             <div class="subCalculationContainer"> 
-                <textarea class="outputTextArea" id="output_area" style="width:300px; height:150px;">TODO Ausgabe des Kompressionsverfahren</textarea>
+                <textarea class="outputTextArea" id="output_area" style="width:300px; height:150px;">Ausgabe des Kompressionsverfahren</textarea>
             </div>
             <div class="subCalculationContainer"> 
                 <div class="standardContainer">
                     <button class="aktionButton" type="button" onclick="decodeInput()">Starte Naives-Dekompressionsverfahren</button>
                     <button class="aktionButton" type="button" onclick="decodeInputPrecise()">Starte Genaues-Dekompressionsverfahren</button>
                 </div> 
-                
+            </div>
+            <div class="textBlock"> 
+                <p> Die utf-8 Eingabe wird in bit umgewandelt.</p>
+                <table>
+                    <tr>
+                        <td>
+                            <div id="inputSize"> Eingabe Zeichen Länge
+                            </div>
+                        </td>
+                        <td>
+                            <div id="inputBit"> Eingabe Bit Länge
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="outputSize"> Ausgabe Zeichen Länge
+                            </div>
+                        </td>
+                        <td>
+                            <div id="outputBit"> Ausgabe Bit Länge
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="savedBit"> Prozentualer Unterschied
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
-
-
-    <script>
-        $(document).ready(function(){
-          $('[data-toggle="tooltip"]').tooltip();   
-        });
-    </script>
 </body>
