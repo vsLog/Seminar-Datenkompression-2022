@@ -24,12 +24,17 @@ THE SOFTWARE.
  This code was written by Mario Navarro Krauß and Vito Schopper to illustrate
  and visualize the arithmetic coding algorithm used for Data Compression.
  The encoding and decoding scripts use parts of the algorithm descriped 
- by Mark Nelson' article:
+ by Mark Nelson's article:
  Data Compression With Arithmetic Coding
  published at: http://marknelson.us/2014/10/19/data-compression-with-arithmetic-coding
 
 */
 
+/**
+ * Encodes the input of the textfield "input_area" to a number between 0 and 1.
+ * Uses a naive algorithm ignoring the limited precision of number in the computer.
+ * Stores the data in the sessionStorage.
+ */
 encodeInput = function() {
     var input = document.getElementById("input_area").value;
     var totalChars = input.length;
@@ -41,10 +46,23 @@ encodeInput = function() {
     document.getElementById("output_area").value = encodedInput;
 }
 
+/**
+ * Encodes the input to a number between 0 and 1 using the relative occurences of each char.
+ * @param {string} input - input String
+ * @param {number} totalChars - total number of chars
+ * @param {Map} charMap - Character occurrence map
+ * @returns {number} encoded Message - number between 0 and 1
+ */
 encode = function(input, totalChars, charMap) {
+    // calculate the intervals each char gets between 0 and 1
     var charIntervals = generateCharIntervals(totalChars, charMap);
     var upperBound = 1.0;
     var lowerBound = 0.0;
+    // resize the interval in which the output will be contained to fit the charMap
+    // if for example the letter 'a' has the intervall 0.25 to 0.75 then each time
+    // 'a' comes up in the input the upper and lower Bound of the output will be 
+    // recalculated so that it only contains the middle 50% between the old Bounds
+    // [0, 1) becomes [0.25, 0.75) or [0.2, 0.6) becomes [0.3, 0.5)
     for (var i = 0; i < input.length; i++) {
         var intervalSize = upperBound - lowerBound;
         upperBound = lowerBound + intervalSize * charIntervals.get(input[i])[1];
@@ -53,8 +71,16 @@ encode = function(input, totalChars, charMap) {
     return (lowerBound + (upperBound-lowerBound)/2);
 }
 
+/**
+ * Calculate the intervals each char has between 0 and 1 if their size corresponds
+ * to their relative occurence probability.
+ * @param {number} totalChars - total number of chars
+ * @param {Map} charMap - Character occurrence map
+ * @returns {Map} charMap - each char has its own [lowerBound, upperBound] interval
+ */
 generateCharIntervals = function(totalChars, charMap) {
     var lowerBound = 0.0;
+    // starting from 0 the interval from 0 to 1 is split between the chars
     for ( let [key, value] of charMap) {
         var upperBound = (lowerBound + (value/totalChars));
         charMap.set(key, [lowerBound, upperBound]);
@@ -63,6 +89,11 @@ generateCharIntervals = function(totalChars, charMap) {
     return charMap;
 }
 
+/**
+ * Encodes the input of the textfield "input_area" to a number between 0 and 1.
+ * Uses Mark Nelson's c++ algorithm modified to fit our needs and javascript.
+ * Stores the data in the sessionStorage.
+ */
 encodeInputPrecise = function() {
     var input = document.getElementById("input_area").value;
     var totalChars = input.length;
@@ -74,8 +105,18 @@ encodeInputPrecise = function() {
     encodePrecice(input, totalChars, charMap);
 }
 
+/**
+ * Encodes the input to a binary number using the relative occurences of each char.
+ * Uses Mark Nelson's c++ algorithm modified to fit our needs and javascript.
+ * For a deeper insight into the how and why see his article:
+ * http://marknelson.us/2014/10/19/data-compression-with-arithmetic-coding
+ * @param {string} input - input String
+ * @param {number} totalChars - total number of chars
+ * @param {Map} charMap - Character occurrence map
+ */
 encodePrecice = function(input, totalChars, charMap) {
     var charIntervals = generateCharIntervalsPrecice(charMap);
+    // creates Arrays containing 32Bit numbers to recreate c++ int
     var uint32Bounds = new Uint32Array([0, 0xFFFFFFFF]);
     const uint32IfConstans = new Uint32Array([0x80000000, 0x40000000, 0xC0000000]);
     var pending_bits = 0;
@@ -107,7 +148,7 @@ encodePrecice = function(input, totalChars, charMap) {
             }
             else { 
                 break;
-            }   
+            }
         } 
     }
     pending_bits++;
@@ -119,6 +160,14 @@ encodePrecice = function(input, totalChars, charMap) {
     }
 }
 
+/**
+ * Output the pending bits.
+ * Uses Mark Nelson's c++ algorithm modified to fit our needs and javascript.
+ * For a deeper insight into the how and why see his article:
+ * http://marknelson.us/2014/10/19/data-compression-with-arithmetic-coding
+ * @param {boolean} bit - output bit
+ * @param {number} pending_bits - number of pending bits
+ */
 output_bit_plus_pending = function(bit, pending_bits) {
     output_bit(bit);
     while (pending_bits--) {
@@ -126,10 +175,19 @@ output_bit_plus_pending = function(bit, pending_bits) {
     }    
 }
 
+/**
+ * Output the bit to the "output_area".
+ * @param {boolean} bit - output bit
+ */
 output_bit = function(bit) {
     document.getElementById("output_area").value += bit*1;
 }
 
+/**
+ * Calculate the bounds of each char to be used by "encodePrecice".
+ * @param {Map} charMap - Character occurrence map
+ * @returns {Map} charMap - each char has its own [lowerBound, upperBound]
+ */
 generateCharIntervalsPrecice = function(charMap) {
     var lowerBound = 0;
     for ( let [key, value] of charMap) {
@@ -140,6 +198,11 @@ generateCharIntervalsPrecice = function(charMap) {
     return charMap;
 }
 
+/**
+ * Converts a decimal to a binary number. Return is a string!
+ * @param {number} decimal - decimal number
+ * @returns {string} binary number as string
+ */
 decimalToBinary = function(decimal) {
     return (decimal >>> 0).toString(2);
 }

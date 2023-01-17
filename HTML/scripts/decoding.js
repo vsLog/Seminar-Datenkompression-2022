@@ -30,6 +30,11 @@ THE SOFTWARE.
 
 */
 
+/**
+ * Decodes the input of the textfield "output_area" to the (hopefully) original text.
+ * Uses a naive algorithm ignoring the limited precision of number in the computer.
+ * Loads the char data from the sessionStorage.
+ */
 decodeInput = function() {
     var input = Number(document.getElementById("output_area").value);
     totalChars = sessionStorage.getItem("totalChars");
@@ -38,6 +43,13 @@ decodeInput = function() {
     document.getElementById("input_area").value = decodedInput;
 }
 
+/**
+ * Decodes the input to a text using the relative occurences of each char.
+ * @param {number} input - input number between 0 and 1
+ * @param {number} totalChars - total number of chars
+ * @param {Map} charIntervals - Character interval map
+ * @returns {number} decoded Message
+ */
 decode = function(input, totalChars, charIntervals) {
     var output = "";
     var upperBound = 1.0;
@@ -52,6 +64,12 @@ decode = function(input, totalChars, charIntervals) {
     return output;
 }
 
+/**
+ * Findes in which char interval the inputValue falls and returns the corresponding char.
+ * @param {number} inputValue - input number between 0 and 1
+ * @param {Map} charIntervals - Character interval map
+ * @returns {string} decoded char (returns "Error" if an error occures)
+ */
 findChar = function(inputValue, charIntervals) {
     lastChar = "Error"
     for ( let [key, value] of charIntervals) {
@@ -63,6 +81,11 @@ findChar = function(inputValue, charIntervals) {
     return lastChar;
 }
 
+/**
+ * Decodes the input of the textfield "output_area" to the (hopefully) original text.
+ * Uses Mark Nelson's c++ algorithm modified to fit our needs and javascript.
+ * Loads the char data from the sessionStorage.
+ */
 decodeInputPrecise = function() {
     var input = document.getElementById("output_area").value;
     totalChars = sessionStorage.getItem("totalChars");
@@ -71,12 +94,23 @@ decodeInputPrecise = function() {
     document.getElementById("input_area").value = decodedInput;
 }
 
+/**
+ * Decodes the input from a binary number using the relative occurences of each char.
+ * Uses Mark Nelson's c++ algorithm modified to fit our needs and javascript.
+ * For a deeper insight into the how and why see his article:
+ * http://marknelson.us/2014/10/19/data-compression-with-arithmetic-coding
+ * @param {string} input - binary number
+ * @param {number} totalChars - total number of chars
+ * @param {Map} charMap - Character occurrence map
+* @returns {string} output - decoded message
+ */
 decodePrecice = function(input, totalChars, charMap) {
     var output = "";
     var charIntervals = generateCharIntervalsPrecice(charMap);
     var uint32Bounds = new Uint32Array([0, 0xFFFFFFFF, 0]);
     // 0 = lowerBound, 1 = upperBound, 2 = value
     const uint32IfConstans = new Uint32Array([0x80000000 , 0x40000000, 0xC0000000]);
+    // load the first 32 bit of the input string into the 32bit int array
     for (var i = 0 ; i < 32 ; i++) {
         uint32Bounds[2] <<= 1;
         uint32Bounds[2] += (input[0] >>> 0);
@@ -141,6 +175,13 @@ decodePrecice = function(input, totalChars, charMap) {
     return output;
 }
 
+
+/**
+ * Findes in which char interval the inputValue falls and returns the corresponding char.
+ * @param {number} inputValue - input number between 0 and 1
+ * @param {Map} charIntervals - Character interval map
+ * @returns {string} decoded char (returns "Error" if an error occures)
+ */
 findCharPrecise = function(inputValue, charIntervals) {
     lastChar = "Error";
     for ( let [key, value] of charIntervals) {
