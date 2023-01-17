@@ -30,76 +30,86 @@
 
     
 	<div class="mainContainer">  
-            <p>
-                TODO Erklärung
+        <div class="textBlock">
+            <h2>Erklärung</h2>  
+            <p> 
+                Sie können in das obere Textfeld ihre Eingabe, bestehend aus UTF-8 Zeichen eingeben und dann über die Knöpfe zwei verschiedene 
+                Implementierungen der Arithmetisches Codierung auf ihre Eingabe anwenden. Sie erhalten anschließend eine Zahl zwischen 0 und 1 im unteren Textfeld
+                ausgegeben, welche ihre Eingabe encodiert.
             </p>
-            <div class="calculationContainer"> 
-                <div class="subCalculationContainer"> 
-                    <textarea class="inputTextArea" id="input_area" style="width:300px; height:150px;">Eingabefeld</textarea>
-                </div>
-                <div class="subCalculationContainer"> 
-                    <div class="standardContainer">
-                        <button class="aktionButton" type="button" onclick="readInput()">Generiere Wahrscheinlichkeiten</button>
-                    </div> 
-                </div>
-                <div class="subCalculationContainer">
-                    <div class="progress" id="progressParent">
-                        <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: green" data-toggle="tooltip" data-container="body" title="p(E)=1/11">
-                            E
-                        </div>
-                        <div class="progress-bar progress-bar" role="progressbar" style="width: calc(100% / 11); background-color: rgb(36, 65, 117)">
-                            i
-                        </div>
-                        <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(128, 0, 32)">
-                            n
-                        </div>
-                        <div class="progress-bar progress-bar" role="progressbar" style="width: calc(100% / 11); background-color: rgb(98, 0, 128)">
-                            g
-                        </div>
-                        <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(73, 128, 0)">
-                            a
-                        </div>
-                        <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(109, 128, 0)">
-                            b
-                        </div>
-                        <div class="progress-bar progress-bar" role="progressbar" style="width:calc(200% / 11); background-color: rgb(128, 30, 0)">
-                            e
-                        </div>
-                        <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(0, 77, 128)">
-                            f
-                        </div>
-                        <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(128, 98, 0)">
-                            l
-                        </div>
-                        <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(77, 0, 128)">
-                            d
-                        </div>
+            <p>
+                Andersherum können sie im unteren Feld eine entsprechende Zahl zwischen 0 und 1 eingeben und wieder decodieren. 
+                Achten sie dabei auf die unterschiedlichen Zahlenformaten zwischen dem "Naiven" und "Genauem" Verfahren.
+            </p>
+            <p>
+                Sowohl das encodieren als auch das decodieren nutzt die Wahrscheinlichkeitsverteilung der zuletzt encodierten Eingabe.
+            </p>
+        </div>
+        <div class="calculationContainer"> 
+            <div class="subCalculationContainer"> 
+                <textarea class="inputTextArea" id="input_area" style="width:300px; height:150px;">Eingabefeld</textarea>
+            </div>
+            <div class="subCalculationContainer"> 
+                <div class="standardContainer">
+                    <button class="aktionButton" type="button" onclick="readInput()">Generiere Wahrscheinlichkeiten</button>
+                </div> 
+            </div>
+            <div class="subCalculationContainer">
+                <div class="progress" id="progressParent">
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: green" data-toggle="tooltip" data-container="body" title="p(E)=1/11">
+                        E
                     </div>
-                    
-                   
+                    <div class="progress-bar progress-bar" role="progressbar" style="width: calc(100% / 11); background-color: rgb(36, 65, 117)">
+                        i
+                    </div>
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(128, 0, 32)">
+                        n
+                    </div>
+                    <div class="progress-bar progress-bar" role="progressbar" style="width: calc(100% / 11); background-color: rgb(98, 0, 128)">
+                        g
+                    </div>
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(73, 128, 0)">
+                        a
+                    </div>
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(109, 128, 0)">
+                        b
+                    </div>
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(200% / 11); background-color: rgb(128, 30, 0)">
+                        e
+                    </div>
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(0, 77, 128)">
+                        f
+                    </div>
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(128, 98, 0)">
+                        l
+                    </div>
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(77, 0, 128)">
+                        d
+                    </div>
                 </div>
                 
-                <div class="subCalculationContainer"> 
-                    <div class="standardContainer">
-                        <button class="aktionButton" type="button" onclick="encodeInput()">Starte Naives-Kompressionsverfahren</button>
-                    </div> 
-                    <div class="standardContainer">
-                        <button class="aktionButton" type="button" onclick="encodeInputPrecise()">Starte Genaues-Kompressionsverfahren</button>
-                    </div> 
-                </div>
-                <div class="subCalculationContainer"> 
-                    <textarea class="outputTextArea" id="output_area" style="width:300px; height:150px;">TODO Ausgabe des Kompressionsverfahren</textarea>
-                </div>
-                <div class="subCalculationContainer"> 
-                    <div class="standardContainer">
-                        <button class="aktionButton" type="button" onclick="decodeInput()">Starte Naives-Dekompressionsverfahren</button>
-                        <button class="aktionButton" type="button" onclick="decodeInputPrecise()">Starte Genaues-Dekompressionsverfahren</button>
-                    </div> 
-                    
-                </div>
+                
             </div>
-            <h3 class="subtitle">Statistik</h3>
-                TODO Statistiken des Kompressionsverfahren
+            
+            <div class="subCalculationContainer"> 
+                <div class="standardContainer">
+                    <button class="aktionButton" type="button" onclick="encodeInput()">Starte Naives-Kompressionsverfahren</button>
+                </div> 
+                <div class="standardContainer">
+                    <button class="aktionButton" type="button" onclick="encodeInputPrecise()">Starte Genaues-Kompressionsverfahren</button>
+                </div> 
+            </div>
+            <div class="subCalculationContainer"> 
+                <textarea class="outputTextArea" id="output_area" style="width:300px; height:150px;">TODO Ausgabe des Kompressionsverfahren</textarea>
+            </div>
+            <div class="subCalculationContainer"> 
+                <div class="standardContainer">
+                    <button class="aktionButton" type="button" onclick="decodeInput()">Starte Naives-Dekompressionsverfahren</button>
+                    <button class="aktionButton" type="button" onclick="decodeInputPrecise()">Starte Genaues-Dekompressionsverfahren</button>
+                </div> 
+                
+            </div>
+        </div>
     </div>
 
 

@@ -3,12 +3,9 @@ body{
     margin: 0px;
 }
 
-.standardContainer{
-    
-}
-
 .textBlock{
     margin-left: 5%;
+    margin-right: 2.5%;
 }
 
 /* Navigation Bar */
