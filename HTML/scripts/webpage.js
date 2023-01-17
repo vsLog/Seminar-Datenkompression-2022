@@ -26,7 +26,9 @@ countChars = function (str) {
 mapToString = function (occurenceMap) {
     var output = "";
     for ( let [key, value] of occurenceMap) {
-        output = output.concat(`${key}  occurs  ${value} times\n`);
+        // output = output.concat(`${key}  occurs  ${value} times\n`);
+        output = output.concat((`${key}  occurs  ${value} times`).replace("\n", "\\n"));
+        output = output.concat(`\n`);
     }
     return output
 }
