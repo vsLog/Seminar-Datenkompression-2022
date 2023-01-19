@@ -69,7 +69,7 @@
 		\LARGE\textbf{\textsc{\\
 		Vito Schopper - 7503386
 		\\
-		Mario Navarro - }}\\ 
+		Mario Navarro Krauß - }}\\ 
 		\vspace{2cm}
 		\LARGE\textbf{\textsc{\\Pro-Seminar
 		\\ Datenkompression WS 2022}}\\ 
@@ -118,13 +118,13 @@ Dies kann z.B. durch einen Binary-Search Algorithmus erreicht werden. So wäre 0
 \label{sec:Problematik}
 Normalerweise werden Zahlen mit 32 oder 64 Bit precision gespeichert. Das wird für uns ein Problem, da die Intervallgrenzen sich immer stärker annähern. Dies führt unvermeidlich zu einem Intervall, in welchem beide Grenzen den gleichen Wert annehmen [a,a] und  fortan falsch Kodieren würde.\\
 Es existieren mehrere Möglichkeiten, um diese Problematik mehr oder weniger effektiv zu umgehen.\\
-Oft direkt nach einem kodierten Zeichen, geschaut ob die Zahl im Intervall [0, 0.5] oder [0.5, 1] liegt und das jeweilige Intervall anschließend normalisiert, sodass Rechnungen mit hoher Präzision nie auftreten.
+Oft wird direkt nach einem kodierten Zeichen geschaut, ob die Zahl im Intervall [0, 0.5] oder [0.5, 1] liegt und das jeweilige Intervall anschließend normalisiert, sodass Rechnungen mit hoher Präzision nie auftreten.
 
 \newpage
 \subsection{Dekodierung}
 Hier wird als Eingabe ein kodierte Binärzahl x erwartet. Diese wird anschließend in eine Dezimalzahl umgerechnet. Ebenso wird eine Häufigkeitsverteilung aller Zeichen als Eingabe erwartet. Aus dieser wird analog zu \ref{sec:Verfahren-Kodierung} das Intervall [0,1] im Hinblick auf die Zeichen aufgeteilt. Eine Startbedingung könnte folgendermaßen aussehen:
 \begin{center}
-\includegraphics[scale=0.4]{dec-schritt1}
+\includegraphics[scale=0.5]{dec-schritt1}
 \end{center}
 Durch die Häufigkeitsangaben wissen wir, dass die Dekodierung aus genau 5 Zeichen besteht.\\
 Im ersten Schritt wird die Dezimalzahl x auf dem Intervall gesucht. Das kodierte Zeichen entspricht nun dem Intervall in welchem sich x befindet \textit{(also H)}.

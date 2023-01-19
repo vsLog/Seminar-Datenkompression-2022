@@ -105,19 +105,20 @@ So könnte z.B für die Eingabe \textbf{Hello} folgende Startbedingung erstellt 
 \begin{center}
 \includegraphics[scale=0.4]{enc-schritt1}
 \end{center}
+\newpage
 Nun wird das erste Zeichen eingelesen. Dessen Intervall wird nun das komplette Intervall ersetzen. Die Verhältnisse der Intervalle untereinander ändert sich nicht. Es werden lediglich die Grenzen aktualisiert. Anschließend wird das nächste Zeichen eingelesen und die Intervallgrenzen entsprechend aktualisiert. Hat man dies nun für alle Zeichen der Eingabe durchgeführt, so liegt einem ein Intervall [a,b] vor.
 \begin{center}
 \includegraphics[scale=0.5]{enc-schritt2}
 \end{center}
 Alle Zahlen innerhalb dieses Intervalls sind korrekte Kodierungen für unsere Eingabe. Es gibt somit theoretisch unendlich viele Kodierungen für eine Eingabe x, nämlich alle Zahlen im Intervall [a,b].\\
 Da man bei einer Kodierung eine Eingabe aber natürlich mit möglichst wenig Bits kodieren möchte, wird die kürzeste Binärzahl genommen, welche im Intervall [a,b] liegt.\\
-Dies kann z.B. durch einen Binary-Search Algorithmus erreicht werden. In unserem Fall wäre 0.11001 eine mögliche Kodierung für das Interval [0.78, 0.8].
+Dies kann z.B. durch einen Binary-Search Algorithmus erreicht werden. So wäre 0.11001 eine mögliche Kodierung für das Interval [0.78, 0.8].
 
 \subsection{Problematik - Finite-Precision Arithmetic Coding}
 \label{sec:Problematik}
 Normalerweise werden Zahlen mit 32 oder 64 Bit precision gespeichert. Das wird für uns ein Problem, da die Intervallgrenzen sich immer stärker annähern. Dies führt unvermeidlich zu einem Intervall, in welchem beide Grenzen den gleichen Wert annehmen [a,a] und  fortan falsch Kodieren würde.\\
 Es existieren mehrere Möglichkeiten, um diese Problematik mehr oder weniger effektiv zu umgehen.\\
-Oft direkt nach einem kodierten Zeichen, geschaut ob die Zahl im Intervall [0, 0.5] oder [0.5, 1] liegt und das jeweilige Intervall anschließend normalisiert, sodass Rechnungen mit hoher Präzision nie auftreten.
+Oft wird direkt nach einem kodierten Zeichen geschaut, ob die Zahl im Intervall [0, 0.5] oder [0.5, 1] liegt und das jeweilige Intervall anschließend normalisiert, sodass Rechnungen mit hoher Präzision nie auftreten.
 
 \newpage
 \subsection{Dekodierung}

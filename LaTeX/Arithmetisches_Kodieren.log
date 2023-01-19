@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.8)  15 JAN 2023 19:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.8)  19 JAN 2023 22:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -824,11 +824,11 @@ been already used, duplicate ignored
                    \relax 
 l.88 \tableofcontents\newpage
                               [1]
-<enc-schritt1.jpg, id=108, 924.45375pt x 329.43076pt>
+<enc-schritt1.jpg, id=108, 808.82175pt x 275.22826pt>
 File: enc-schritt1.jpg Graphic file (type jpg)
 <use enc-schritt1.jpg>
 Package pdftex.def Info: enc-schritt1.jpg  used on input line 106.
-(pdftex.def)             Requested size: 369.77495pt x 131.76996pt.
+(pdftex.def)             Requested size: 323.52296pt x 110.08934pt.
  [2 <./enc-schritt1.jpg>]
 <enc-schritt2.png, id=115, 766.062pt x 431.81325pt>
 File: enc-schritt2.png Graphic file (type png)
@@ -836,11 +836,11 @@ File: enc-schritt2.png Graphic file (type png)
 Package pdftex.def Info: enc-schritt2.png  used on input line 111.
 (pdftex.def)             Requested size: 383.03006pt x 215.90608pt.
  [3 <./enc-schritt2.png>]
-<dec-schritt1.jpg, id=123, 965.40675pt x 328.8285pt>
+<dec-schritt1.jpg, id=123, 804.00375pt x 272.217pt>
 File: dec-schritt1.jpg Graphic file (type jpg)
 <use dec-schritt1.jpg>
 Package pdftex.def Info: dec-schritt1.jpg  used on input line 127.
-(pdftex.def)             Requested size: 386.15587pt x 131.52907pt.
+(pdftex.def)             Requested size: 402.0009pt x 136.10815pt.
 <dec-schritt2.png, id=125, 766.66425pt x 429.40425pt>
 File: dec-schritt2.png Graphic file (type png)
 <use dec-schritt2.png>
@@ -893,7 +893,7 @@ Package rerunfilecheck Info: File `Arithmetisches_Kodieren.out' has not changed
 Here is how much of TeX's memory you used:
  23432 strings out of 475380
  432180 string characters out of 2776773
- 931519 words of memory out of 3000000
+ 931518 words of memory out of 3000000
  44375 multiletter control sequences out of 15000+600000
  482215 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -907,9 +907,9 @@ pen/ec/dpi600\ecbx1000.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fonts/pk/ljfour
 ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\vscho\AppData\Local\MiKTeX\fon
 ts/pk/ljfour/jknappen/ec/dpi600\ecxc1728.pk> <C:\Users\vscho\AppData\Local\MiKT
 eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2074.pk>
-Output written on Arithmetisches_Kodieren.pdf (9 pages, 276168 bytes).
+Output written on Arithmetisches_Kodieren.pdf (9 pages, 265521 bytes).
 PDF statistics:
- 545 PDF objects out of 1000 (max. 8388607)
+ 548 PDF objects out of 1000 (max. 8388607)
  43 named destinations out of 1000 (max. 500000)
  169 words of extra memory for PDF output out of 10000 (max. 10000000)
 
