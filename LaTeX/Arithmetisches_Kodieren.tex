@@ -69,7 +69,7 @@
 		\LARGE\textbf{\textsc{\\
 		Vito Schopper - 7503386
 		\\
-		Mario Navarro Krauß - }}\\ 
+		Mario Navarro Krauß - 7463132}}\\ 
 		\vspace{2cm}
 		\LARGE\textbf{\textsc{\\Pro-Seminar
 		\\ Datenkompression WS 2022}}\\ 
@@ -138,10 +138,12 @@ Haben wir dies 5 mal durchgeführt erhalten wird unseren dekodierten String \tex
 \newpage
 
 		\section{Anwendungsgebiet}
-	Hier könnte ein kurzer Satz zur Einleitung stehen.
+	Implementierungen der Arithmetischen Kodierung können in der Text und Bildkompression genutzt werden. In Bildkompressionsoftware wird nur  teilweise die Arithmetischen Kodierung als Entropie Kodierung genutzt. Aufgrund einer unklaren Patent Situation um die 1980er Jahre, wurde die Huffman-Kodierung oft bevorzugt\cite{WIKI-EN}. JPEG zum Beispiel bietet jedoch beide Entropie-Kodierungen an, wobei eine Konvertierung von Huffman- zu Arithmetischer-Kodierung eine weitere Reduktion von bis zu 25\% erreichen kann.
 	
 			\section{Qualitätsbewertung über das Verfahren}
-	Hier könnte ein kurzer Satz zur Einleitung stehen.
+	Die Arithmetische Kodierung kommt mit einer genauen Wahrscheinlichkeitstabelle des genutzten Alphabets nahe an das theoretische Limit der Datenkompression: der Entropie der Nachricht. Dabei kann es bessere Ergebnisse als die Huffman-Codierung erreichen, weist dafür jedoch auch einen höheren Rechenaufwand auf, da der Algorithmus komplizierter ist.\\
+	Die Asymmetric Numeral Systems (ANS)\cite{WIKI-ANS} kombinieren die nahe an der Entropie liegende Kompressionsrate dieses Verfahrens mit einer, der Huffman-Codierung vergleichbaren, Ausführungszeit.\\
+	Die Arithmetische Kodierung liefert also sehr gute Ergebnisse, aber benötigt dafür auch viele Rechenoperationen. Texte mit Millionen Zeichen können in Bruchteilen einer Sekunde komprimiert werden, aber wenn man große Mengen Bilder komprimieren will, kann man noch etwas mehr (zeitliche) Effizienz mit anderen Verfahren herausholen.
 	
 	\newpage
 			\section{Präsentation / Demonstration Kit}
@@ -237,8 +239,11 @@ Auf der HTML Seite kann man zusätzlich noch einmal das naive Verfahren ausführ
 \bibitem{go} Arithmetic coding. The Hitchhiker's Guide to Compression. (n.d.). Retrieved January 15, 2023, from https://go-compression.github.io/algorithms/arithmetic/ 
 		
 		\bibitem{WIKI} Wikimedia Foundation. (2022, November 6). Arithmetisches Kodieren. Wikipedia. Retrieved January 12, 2023, from https://de.wikipedia.org/wiki/Arithmetisches\_Kodieren
+		
+		\bibitem{WIKI-EN} Wikimedia Foundation. (2023, January 21). Arithmetic coding. Wikipedia. Retrieved January 23, 2023, from https://en.wikipedia.org/wiki/Arithmetic\_coding
 	
 		\bibitem{3blue1brown} Wikimedia Foundation. (2022, December 30). 3Blue1Brown. Wikipedia. Retrieved January 15, 2023, from https://en.wikipedia.org/wiki/3Blue1Brown 
-		
+	
+		\bibitem{WIKI-ANS} Wikimedia Foundation. (2022, August 9). Asymmetric Numeral Systems. Wikipedia. Retrieved January 23, 2023, from https://de.wikipedia.org/wiki/Asymmetric\_Numeral\_Systems	
 			\end{thebibliography}
 \end{document}

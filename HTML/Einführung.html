@@ -65,7 +65,7 @@
 
         <div class="textBlock" id="Grundlagen">
             <h2>Theoretische Grundlagen</h2>
-            Das Verfahren stützt sich wie auch viele andere Kompressionsverfahren auf die Stochastik. So wird zu Beginn die Häufigkeit und die entsprechende Wahrscheinlichkeit für jedes Zeichen einer Eingabe berechnet. Das Verständnis von Binary-Search wird vorausgesetzt und nicht genauer erklärt, da dies auch keine Charakteristik des Kompressionsverfahrens beschreibt, sondern nur zur Berechnung einer binären Zahl innerhalb eines Intervalles dient (siehe <a href="#Beschreibung">Beschreibung</a>). 
+            Das Verfahren stützt sich wie auch viele andere Kompressionsverfahren auf die Stochastik. So wird zu Beginn die Häufigkeit und die entsprechende Wahrscheinlichkeit für jedes Zeichen einer Eingabe berechnet. Das Verständnis von Binary-Search wird vorausgesetzt und nicht genauer erklärt, da dies auch keine Charakteristik des Kompressionsverfahrens beschreibt, sondern nur zur Berechnung einer binären Zahl innerhalb eines Intervalles dient (siehe <a href="#Kodierung">Kodierung</a>). 
         </div>
 
 
@@ -118,12 +118,23 @@
 
         <div class="textBlock" id="Anwendungsgebiet">
             <h2>Anwendungsgebiet</h2>
-            TODO 	
+            Implementierungen der Arithmetischen Kodierung können in der Text und Bildkompression genutzt
+			werden. In Bildkompressionsoftware wird nur teilweise die Arithmetischen Kodierung als Entropie
+			Kodierung genutzt. Aufgrund einer unklaren Patent Situation um die 1980er Jahre, wurde die
+			Huffman-Kodierung oft bevorzugt. JPEG zum Beispiel bietet jedoch beide Entropie-Kodierungen
+			an, wobei eine Konvertierung von Huffman- zu Arithmetischer-Kodierung eine weitere Reduktion
+			von bis zu 25% erreichen kann.
         </div>
 
         <div class="textBlock" id="Qualitätsbewertung">
             <h2>Qualitätsbewertung über das Verfahren</h2>
-            TODO 
+            Die Arithmetische Kodierung kommt mit einer genauen Wahrscheinlichkeitstabelle des genutzten
+			Alphabets nahe an das theoretische Limit der Datenkompression: der Entropie der Nachricht. Dabei kann es bessere Ergebnisse als die Huffman-Codierung erreichen, weist dafür jedoch auch einen
+			höheren Rechenaufwand auf, da der Algorithmus komplizierter ist.
+			Die Asymmetric Numeral Systems (ANS) kombinieren die nahe an der Entropie liegende Kompressionsrate dieses Verfahrens mit einer, der Huffman-Codierung vergleichbaren, Ausführungszeit.
+			Die Arithmetische Kodierung liefert also sehr gute Ergebnisse, aber benötigt dafür auch viele Rechenoperationen. Texte mit Millionen Zeichen können in Bruchteilen einer Sekunde komprimiert
+			werden, aber wenn man große Mengen Bilder komprimieren will, kann man noch etwas mehr (zeitliche) Effizienz mit anderen Verfahren herausholen.
+
         </div>
 
         <div class="textBlock" id="Referenzen">
