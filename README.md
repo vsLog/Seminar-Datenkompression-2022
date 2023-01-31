@@ -1,5 +1,4 @@
 # Seminar-Datenkompression-2022
-TODO
 
 # Execute encoding.py
 1. python module **manim** needs to be installed and executable from terminal
