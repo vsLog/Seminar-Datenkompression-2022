@@ -48,6 +48,19 @@ readInput = function() {
 }
 
 /**
+ * Reads the input in the textfield "input_area" and updates the probability map.
+ * Stores the data in the sessionStorage.
+ */
+readInputNew = function() {
+    var input = document.getElementById("input_area").value;
+    var totalChars = input.length;
+    var charMap = countChars(input);
+    sessionStorage.setItem("totalChars", totalChars);
+    sessionStorage.setItem("charMap", JSON.stringify(Array.from(charMap.entries())));
+    createCharElement(charMap, totalChars);
+}
+
+/**
  * Creates a progress-bar using bootstrap 3 containing the occurenceMap data.
  * @param {Map} occurenceMap - Character occurrence map
  * @param {number} totalChars - total number of chars

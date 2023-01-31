@@ -63,6 +63,8 @@
             </p>
             <p>
                 Sowohl das encodieren als auch das decodieren nutzt die Wahrscheinlichkeitsverteilung der zuletzt encodierten Eingabe.
+                Sie können durch den "Neue Wahrscheinlichkeiten" Knopf die Zeichenverteilung neu berechnen, um eine andere Wahrscheinlichkeitsverteilung zum dekodieren zu nutzen.
+                Achten sie hierbei darauf, dass die Reihenfolge in der die Zeichen vorkommen für den hier genutzen Code relevant ist.
             </p>
             <p>
                 Für das (De-)Kompressionsverfahren wird eine in Javascript umgeschriebene und leicht angepasste Version des Codes von      
@@ -79,6 +81,7 @@
             <div class="subCalculationContainer"> 
                 <div class="standardContainer">
                     <button class="aktionButton" type="button" onclick="readInput()">Generiere Wahrscheinlichkeiten</button>
+                    <button class="aktionButton" type="button" onclick="readInputNew()">Neue Wahrscheinlichkeiten</button>
                 </div> 
             </div>
             <div class="subCalculationContainer">
