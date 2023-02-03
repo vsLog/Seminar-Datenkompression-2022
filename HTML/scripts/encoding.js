@@ -112,7 +112,7 @@ encodeInputPrecise = function() {
     document.getElementById("inputSize").innerHTML =    "Eingabe Zeichen Länge ".concat(input.length);
     document.getElementById("inputBit").innerHTML =     "Eingabe Bit     Länge ".concat(input.length*8);
     document.getElementById("outputSize").innerHTML =   "Ausgabe Zeichen Länge ".concat(output.length);
-    document.getElementById("outputBit").innerHTML =    "Ausgabe Bit     Länge".concat(output.length);
+    document.getElementById("outputBit").innerHTML =    "Ausgabe Bit     Länge ".concat(output.length);
     document.getElementById("savedBit").innerHTML =     "Prozentualer Unterschied ".concat(Math.round((output.length-input.length*8)/(input.length*8)*100)).concat("%");
 }
 
