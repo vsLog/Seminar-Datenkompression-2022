@@ -20,3 +20,11 @@
 
 #### Example
 > ![image](https://user-images.githubusercontent.com/77013139/211211255-7c6e6a9a-86fd-4552-8eb1-e3f8537bdcbd.png)
+
+# Execute Datenkompression.html
+1. open one of the three html files in the HTML folder
+2. switch to the Datenkompression one through the navigation bar
+3. fill the upper textfield with your input string (using UTF-8 Symbols)
+4. use either the "naives-" or "genaus-" "Kompressionsverfahren" button to encode your input
+5. (optional) clear input field
+6. use the corresponding "Dekompressionsverfahren" button to decode your message from the lower field
