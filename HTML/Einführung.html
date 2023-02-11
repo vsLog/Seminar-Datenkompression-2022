@@ -53,6 +53,7 @@
 			<div><a href="#Kodierung">Kodierung</a></div>
             <div><a href="#Problematik">Problematik - Finite Precision Arithmetic Coding</a></div>
             <div><a href="#Dekodierung">Dekodierung</a></div>
+			<div><a href="#Lösung">Lösung: Begrenzte Genauigkeit</a></div>
             <div><a href="#Anwendungsgebiet">Anwendungsgebiet</a></div>
             <div><a href="#Qualitätsbewertung">Qualitätsbewertung über das Verfahren</a></div>
             <div><a href="#Referenzen">Referenzen</a></div>           
@@ -115,6 +116,34 @@
 			<br>
 			Haben wir dies 5 mal durchgeführt erhalten wird unseren dekodierten String "Hello".
 			</div>	
+
+		<div class="textBlock" id="Lösung">
+			<h2>Lösung: Begrenzte Genauigkeit</h2> 
+				Um das Problem der begrenzten Genauigkeit im Computer zu lösen müssen wir mehrere Tricks anwenden. Als Erstes wird die Eingabe nicht als Dezimahlzahlen
+				zwischen 0 und 1 encodiert sondern als Binärzahl zwischen 0.000000... und 0.111111... die unter und obergrenzen sind also nun einenlich lange Binärzahlen und wir geben
+				eine endliche Zahl zwischen den beiden Intervallgrenzen am Ende des Verfahrens aus.
+				<br>
+				Der Vorteil hiervon ist, dass wir nun immer nur z.Bsp. 32bit dieser unendlich langen Intervallgrenzen betrachten. Wenn diese nun konvergieren, also die Unter- und 
+				Obergrenzen des Intervalls sich so stark aneinander annähern, dass sie mit dem selben Bit beginnen, können wir das erste Bit ausgeben und die Untergrenze mit einer 0 
+				und die Obergrenze mit einer 1 auffüllen.
+				<br>
+				<img src="./images/GenaueEncodierung1.png" alt="GenaueEncodierung1" width="600" height="300">
+				<br>
+				<br>
+				Mit anderen Worten: jede Zahl zwischen 00000 und 01111 beginnt mit 0, weshalb dieses Bit sich im Verlaufe der weiteren Rechnungennicht verändern wird.
+				<br>
+				Wenn nun die Zahlen nicht ganz zum konvergieren kommen, aber es nur zwei Möglichkeiten gibt, wie sie konvergieren, kann man die zweiten Bits der Intervallgrenzen entfernen
+				und eine Zählervariable für die Ausgabe des nächsten Bits erhöhen. Wenn nun die grenzen konvergieren, gibt man nicht nur wie oben den Anfangsbit aus sondern ergänzt diesen 
+				der Zählervariable entsprechend mit Nullen bzw. Einsen. 
+				<br>
+				<br>
+				<img src="./images/GenaueEncodierung2.png" alt="GenaueEncodierung2" width="600" height="300">
+				<br>
+				<br>
+				Statt mit 01100 und 10011 zu rechnen, kann der Computer auch mit 00000 und 11111 rechnen. Sobald er diese Grenzen nun zu 0XXXX oder 1XXXX konvergieren gibt der 
+				Algorithmus entsprechend 011 oder 100 aus. Denn jede Zahl zwischen 01100 und 10011 beginnt entweder mit 011 oder mit 100.
+
+			</div>
 
         <div class="textBlock" id="Anwendungsgebiet">
             <h2>Anwendungsgebiet</h2>
