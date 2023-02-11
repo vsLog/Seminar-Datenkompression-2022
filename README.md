@@ -1,5 +1,7 @@
 # Seminar-Datenkompression-2022
 
+For High-Quality animations use **-pqh** instead of **-pql**. Note that this will drastically increase the compiling time.
+
 # Execute encoding.py
 1. python module **manim** needs to be installed and executable from terminal
 2. open terminal in .\Seminar-Datenkompression-2022\python
