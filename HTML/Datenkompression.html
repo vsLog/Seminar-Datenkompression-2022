@@ -51,7 +51,10 @@
     
 	<div class="mainContainer">  
         <div class="textBlock">
-            <h2>Erklärung</h2>  
+            <h2>Erklärung</h2>
+            <p> 
+                Achtung die Visualisierung der Wahrscheinlichkeitsverteilung benötigt eine Internetverbindung, da sie Bootstrap nutzt.
+            </p>  
             <p> 
                 Sie können in das obere Textfeld ihre Eingabe, bestehend aus UTF-8 Zeichen, eingeben und dann über die Knöpfe zwei verschiedene 
                 Implementierungen der Arithmetischen  Codierung auf ihre Eingabe anwenden. Sie erhalten anschließend eine Zahl zwischen 0 und 1 im unteren Textfeld
@@ -80,8 +83,8 @@
             </div>
             <div class="subCalculationContainer"> 
                 <div class="standardContainer">
-                    <button class="aktionButton" type="button" onclick="readInput()">Generiere Wahrscheinlichkeiten</button>
-                    <button class="aktionButton" type="button" onclick="readInputNew()">Neue Wahrscheinlichkeiten</button>
+                    <button class="aktionButton" type="button" onclick="readInput()" data-toggle="tooltip" data-container="body" title="Lese die Wahrscheinlichkeitsverteilung der Eingabe aus und gebe sie als Text aus" >Generiere Wahrscheinlichkeiten</button>
+                    <button class="aktionButton" type="button" onclick="readInputNew()" data-toggle="tooltip" data-container="body" title="Aktualisiere die Wahrscheinlichkeitsverteilung mit der Eingabe">Neue Wahrscheinlichkeiten</button>
                 </div> 
             </div>
             <div class="subCalculationContainer">
@@ -89,31 +92,31 @@
                     <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: green" data-toggle="tooltip" data-container="body" title="p(E)=1/11">
                         E
                     </div>
-                    <div class="progress-bar progress-bar" role="progressbar" style="width: calc(100% / 11); background-color: rgb(36, 65, 117)">
+                    <div class="progress-bar progress-bar" role="progressbar" style="width: calc(100% / 11); background-color: rgb(36, 65, 117)" data-toggle="tooltip" data-container="body" title="p(i)=1/11">
                         i
                     </div>
-                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(128, 0, 32)">
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(128, 0, 32)" data-toggle="tooltip" data-container="body" title="p(n)=1/11">
                         n
                     </div>
-                    <div class="progress-bar progress-bar" role="progressbar" style="width: calc(100% / 11); background-color: rgb(98, 0, 128)">
+                    <div class="progress-bar progress-bar" role="progressbar" style="width: calc(100% / 11); background-color: rgb(98, 0, 128)" data-toggle="tooltip" data-container="body" title="p(g)=1/11">
                         g
                     </div>
-                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(73, 128, 0)">
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(73, 128, 0)" data-toggle="tooltip" data-container="body" title="p(a)=1/11">
                         a
                     </div>
-                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(109, 128, 0)">
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(109, 128, 0)" data-toggle="tooltip" data-container="body" title="p(b)=1/11">
                         b
                     </div>
-                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(200% / 11); background-color: rgb(128, 30, 0)">
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(200% / 11); background-color: rgb(128, 30, 0)" data-toggle="tooltip" data-container="body" title="p(e)=2/11">
                         e
                     </div>
-                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(0, 77, 128)">
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(0, 77, 128)" data-toggle="tooltip" data-container="body" title="p(f)=1/11">
                         f
                     </div>
-                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(128, 98, 0)">
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(128, 98, 0)" data-toggle="tooltip" data-container="body" title="p(l)=1/11">
                         l
                     </div>
-                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(77, 0, 128)">
+                    <div class="progress-bar progress-bar" role="progressbar" style="width:calc(100% / 11); background-color: rgb(77, 0, 128)" data-toggle="tooltip" data-container="body" title="p(d)=1/11">
                         d
                     </div>
                 </div>
@@ -123,8 +126,8 @@
             
             <div class="subCalculationContainer"> 
                 <div class="standardContainer">
-                    <button class="aktionButton" type="button" onclick="encodeInput()">Starte Naives-Kompressionsverfahren</button>
-                    <button class="aktionButton" type="button" onclick="encodeInputPrecise()">Starte Genaues-Kompressionsverfahren</button>
+                    <button class="aktionButton" type="button" onclick="encodeInput()" data-toggle="tooltip" data-container="body" title="Ungenaues Verfahren, dass 32bit IEEE-Zahlen nutzt">Starte Naives-Kompressionsverfahren</button>
+                    <button class="aktionButton" type="button" onclick="encodeInputPrecise()"  data-toggle="tooltip" data-container="body" title="Genaues Verfahren, dass 32bit Binärzahlen nutzt">Starte Genaues-Kompressionsverfahren</button>
                 </div> 
             </div>
             <div class="subCalculationContainer"> 
@@ -132,8 +135,8 @@
             </div>
             <div class="subCalculationContainer"> 
                 <div class="standardContainer">
-                    <button class="aktionButton" type="button" onclick="decodeInput()">Starte Naives-Dekompressionsverfahren</button>
-                    <button class="aktionButton" type="button" onclick="decodeInputPrecise()">Starte Genaues-Dekompressionsverfahren</button>
+                    <button class="aktionButton" type="button" onclick="decodeInput()" data-toggle="tooltip" data-container="body" title="Ungenaues Verfahren, dass 32bit IEEE-Zahlen nutzt">Starte Naives-Dekompressionsverfahren</button>
+                    <button class="aktionButton" type="button" onclick="decodeInputPrecise()" data-toggle="tooltip" data-container="body" title="Genaues Verfahren, dass 32bit Binärzahlen nutzt">Starte Genaues-Dekompressionsverfahren</button>
                 </div> 
             </div>
             <div class="textBlock"> 
